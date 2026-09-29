@@ -210,5 +210,2144 @@
     ],
     "addedAt": "2026-09-29",
     "completions": []
+  },
+  {
+    "id": "dandan-dry-udon",
+    "name": "擔擔乾拌烏龍麵",
+    "emoji": "🌶️",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "1 人份",
+    "techniques": [
+      "炒",
+      "煮",
+      "拌"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=dhHGXpOCheA",
+      "youtubeId": "dhHGXpOCheA",
+      "title": "天氣太熱就吃這個！6道冷烏龍麵｜KINOPIKOの台日小家庭",
+      "channel": "KINOPIKOの台日小家庭"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "冷凍烏龍麵",
+            "amount": "1 份"
+          },
+          {
+            "name": "豬絞肉",
+            "amount": "適量"
+          },
+          {
+            "name": "豆芽菜",
+            "amount": "適量"
+          },
+          {
+            "name": "韭菜",
+            "amount": "適量",
+            "note": "切段"
+          },
+          {
+            "name": "蛋黃",
+            "amount": "1 顆",
+            "note": "選用，需生食級雞蛋"
+          }
+        ]
+      },
+      {
+        "group": "醬汁",
+        "items": [
+          {
+            "name": "白芝麻粉",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "雞粉",
+            "amount": "0.5 小匙"
+          },
+          {
+            "name": "燒肉醬",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "味噌",
+            "amount": "0.5 小匙"
+          },
+          {
+            "name": "蒜泥",
+            "amount": "0.5 小匙"
+          },
+          {
+            "name": "無糖豆漿或牛奶",
+            "amount": "2 大匙",
+            "note": "增加濃厚感"
+          }
+        ]
+      },
+      {
+        "group": "其他",
+        "items": [
+          {
+            "name": "辣油",
+            "amount": "依喜好",
+            "note": "影片用日本蒜香辣油，香但不太辣"
+          },
+          {
+            "name": "豆瓣醬",
+            "amount": "少許",
+            "note": "選用，不吃辣可省略"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "醬汁材料全部放進碗裡攪拌均勻。",
+      "平底鍋炒豬絞肉，肉熟後放入豆芽菜和韭菜拌炒（想要可加一點豆瓣醬）。",
+      "烏龍麵煮約 1 分鐘，撈起後一定要用冷水沖過，口感會更 Q 更滑。",
+      "烏龍麵放入碗中，鋪上炒好的肉和菜，淋上醬汁。",
+      "依喜好加辣油，中間放一顆蛋黃，吃之前拌勻讓蛋黃和醬汁融合。"
+    ],
+    "tips": [
+      "烏龍麵過冷水是關鍵，口感更 Q 更滑順。",
+      "加蛋黃會讓醬汁更濃郁、味道更柔和。"
+    ],
+    "pending": [
+      "絞肉、豆芽菜、韭菜的份量影片沒有標示。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": []
+  },
+  {
+    "id": "dandan-cold-soup-udon",
+    "name": "擔擔冷湯烏龍麵",
+    "emoji": "🥣",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "1 人份",
+    "techniques": [
+      "煮"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=dhHGXpOCheA",
+      "youtubeId": "dhHGXpOCheA",
+      "title": "天氣太熱就吃這個！6道冷烏龍麵｜KINOPIKOの台日小家庭",
+      "channel": "KINOPIKOの台日小家庭"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "冷凍烏龍麵",
+            "amount": "1 份"
+          },
+          {
+            "name": "喜歡的肉類",
+            "amount": "適量",
+            "note": "影片用雞胸肉片，海鮮也可以"
+          },
+          {
+            "name": "豆芽菜",
+            "amount": "適量",
+            "note": "龍鬚菜、高麗菜、菇類也可以"
+          },
+          {
+            "name": "水煮蛋",
+            "amount": "隨意"
+          },
+          {
+            "name": "小番茄",
+            "amount": "隨意"
+          },
+          {
+            "name": "蔥",
+            "amount": "隨意",
+            "note": "或香菜"
+          }
+        ]
+      },
+      {
+        "group": "湯汁",
+        "items": [
+          {
+            "name": "胡麻沙拉醬",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "鰹魚風味露",
+            "amount": "1 大匙",
+            "note": "麵味露"
+          },
+          {
+            "name": "韓式辣醬",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "蒜泥",
+            "amount": "少許"
+          },
+          {
+            "name": "無糖豆漿或牛奶",
+            "amount": "200 ml"
+          }
+        ]
+      },
+      {
+        "group": "其他",
+        "items": [
+          {
+            "name": "辣油",
+            "amount": "依喜好"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "胡麻沙拉醬、鰹魚風味露、韓式辣醬、蒜泥先攪拌均勻，再倒入豆漿拌勻（辣醬先拌開，不然不好拌勻）。",
+      "烏龍麵煮好後用冷水沖涼、瀝乾。",
+      "豆芽菜燙熟；肉類準備好切片。",
+      "烏龍麵放入碗中，倒入湯汁，擺上肉片、豆芽菜、水煮蛋、小番茄。",
+      "最後撒上蔥花、淋辣油即可。"
+    ],
+    "tips": [
+      "口感像豚骨系拉麵的湯頭，擺盤可以像拉麵一樣豐富。",
+      "胡麻沙拉醬買來用不完，正好拿來做湯底。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "salad-udon",
+    "name": "蔬菜沙拉烏龍麵",
+    "emoji": "🥗",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "1 人份",
+    "techniques": [
+      "煮",
+      "拌"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=dhHGXpOCheA",
+      "youtubeId": "dhHGXpOCheA",
+      "title": "天氣太熱就吃這個！6道冷烏龍麵｜KINOPIKOの台日小家庭",
+      "channel": "KINOPIKOの台日小家庭"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "冷凍烏龍麵",
+            "amount": "1 份"
+          },
+          {
+            "name": "豬肉片",
+            "amount": "適量",
+            "note": "涮涮鍋肉片"
+          },
+          {
+            "name": "生菜",
+            "amount": "適量",
+            "note": "任何沙拉蔬菜都可以，要瀝乾"
+          },
+          {
+            "name": "小黃瓜",
+            "amount": "適量",
+            "note": "切絲"
+          },
+          {
+            "name": "秋葵",
+            "amount": "2–3 根"
+          },
+          {
+            "name": "小番茄",
+            "amount": "適量",
+            "note": "對半切"
+          }
+        ]
+      },
+      {
+        "group": "醬汁",
+        "items": [
+          {
+            "name": "胡麻沙拉醬",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "鰹魚風味露",
+            "amount": "0.5 大匙"
+          },
+          {
+            "name": "白芝麻",
+            "amount": "0.5 大匙"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "生菜洗淨瀝乾，小黃瓜切絲，小番茄對半切。",
+      "烏龍麵和秋葵一起下鍋煮，撈起後用冷水（可加冰塊）冰鎮，秋葵斜切。",
+      "用煮麵水燙豬肉片，燙熟後沖涼水快速降溫。",
+      "胡麻沙拉醬、鰹魚風味露、白芝麻拌勻成醬汁。",
+      "盤子鋪生菜，放上烏龍麵、小黃瓜、肉片、秋葵、小番茄，淋上醬汁。"
+    ],
+    "tips": [
+      "只用胡麻醬厚度不太夠，加鰹魚風味露和白芝麻更有層次。",
+      "想更清爽可以直接用市售「烏龍麵專用醬汁」，或用鰹魚風味露調。",
+      "吃到一半可以再加胡麻醬換口味。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "tsukimi-yakiniku-udon",
+    "name": "月見燒肉拌烏龍麵",
+    "emoji": "🥩",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "1 人份",
+    "techniques": [
+      "炒",
+      "煮"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=dhHGXpOCheA",
+      "youtubeId": "dhHGXpOCheA",
+      "title": "天氣太熱就吃這個！6道冷烏龍麵｜KINOPIKOの台日小家庭",
+      "channel": "KINOPIKOの台日小家庭"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "冷凍烏龍麵",
+            "amount": "1 份"
+          },
+          {
+            "name": "豬肉片",
+            "amount": "100 g"
+          },
+          {
+            "name": "菇類",
+            "amount": "適量",
+            "note": "影片用霜降平菇，免切蒂頭"
+          },
+          {
+            "name": "蛋黃",
+            "amount": "1 顆",
+            "note": "需生食級雞蛋"
+          },
+          {
+            "name": "蔥花",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "燒肉醬汁",
+        "items": [
+          {
+            "name": "醬油",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "料理酒",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "味醂",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "糖",
+            "amount": "0.5 大匙"
+          },
+          {
+            "name": "薑泥",
+            "amount": "少許"
+          }
+        ]
+      },
+      {
+        "group": "冷湯汁",
+        "items": [
+          {
+            "name": "高湯醬油（出汁醬油）",
+            "amount": "適量",
+            "note": "或用冷水＋少許鰹魚高湯粉調"
+          },
+          {
+            "name": "冷水",
+            "amount": "適量"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "平底鍋炒豬肉片，再加入菇類拌炒。",
+      "加入醬油、料理酒、味醂、糖、薑泥，炒到收汁、醬香出來。",
+      "同時煮烏龍麵，撈起後過冷水。",
+      "烏龍麵放入碗中，鋪上燒肉、蔥花，中間放蛋黃。",
+      "用高湯醬油加冷水調成簡易冷湯汁（或冷水＋一點鰹魚高湯粉），從碗邊倒入即可。"
+    ],
+    "tips": [
+      "醬油、酒、味醂、糖的比例記成 1:1:1（糖減半）就不會出錯。",
+      "加了冰涼的湯汁可以沖淡燒肉的油膩感。",
+      "鰹魚高湯粉一點點就好，肉本身已經有調味。"
+    ],
+    "pending": [
+      "冷湯汁的高湯醬油和水的比例影片沒有標示，請依高湯醬油瓶身的稀釋比例調整。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": []
+  },
+  {
+    "id": "oroshi-pork-cold-udon",
+    "name": "蘿蔔泥豬肉冷湯烏龍麵",
+    "emoji": "🍥",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "1 人份",
+    "techniques": [
+      "煮"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=dhHGXpOCheA",
+      "youtubeId": "dhHGXpOCheA",
+      "title": "天氣太熱就吃這個！6道冷烏龍麵｜KINOPIKOの台日小家庭",
+      "channel": "KINOPIKOの台日小家庭"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "冷凍烏龍麵",
+            "amount": "1 份",
+            "note": "影片用三重烏龍麵，讚岐烏龍麵也很適合"
+          },
+          {
+            "name": "豬肉片",
+            "amount": "適量"
+          },
+          {
+            "name": "白蘿蔔",
+            "amount": "適量",
+            "note": "磨成泥"
+          },
+          {
+            "name": "大葉（紫蘇葉）",
+            "amount": "數片",
+            "note": "切絲"
+          },
+          {
+            "name": "雞蛋",
+            "amount": "1 顆",
+            "note": "煮成半熟蛋"
+          }
+        ]
+      },
+      {
+        "group": "湯汁",
+        "items": [
+          {
+            "name": "雞粉",
+            "amount": "0.5 大匙"
+          },
+          {
+            "name": "鰹魚粉",
+            "amount": "0.5 小匙"
+          },
+          {
+            "name": "醬油",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "薑",
+            "amount": "少許",
+            "note": "磨泥"
+          },
+          {
+            "name": "香油",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "冰水",
+            "amount": "200 ml"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "一鍋煮蛋、一鍋煮麵：雞蛋煮成半熟蛋，烏龍麵煮好後過冷水。",
+      "把雞粉、鰹魚粉、醬油、薑泥、香油加入冰水中攪拌均勻成湯汁。",
+      "用熱水燙熟豬肉片。",
+      "白蘿蔔磨泥，大葉切細絲。",
+      "烏龍麵放入碗中，倒入湯汁，擺上豬肉片、蘿蔔泥、大葉絲和半熟蛋。"
+    ],
+    "tips": [
+      "因為有蘿蔔泥，湯汁加一點薑來平衡味道。",
+      "夏天的湯汁少不了大葉的清香。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "mentaiko-cold-cream-udon",
+    "name": "冷白醬明太子烏龍麵",
+    "emoji": "🍝",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "1 人份",
+    "techniques": [
+      "煮",
+      "拌"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=dhHGXpOCheA",
+      "youtubeId": "dhHGXpOCheA",
+      "title": "天氣太熱就吃這個！6道冷烏龍麵｜KINOPIKOの台日小家庭",
+      "channel": "KINOPIKOの台日小家庭"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "冷凍烏龍麵",
+            "amount": "1 份"
+          },
+          {
+            "name": "明太子",
+            "amount": "隨意",
+            "note": "去膜"
+          },
+          {
+            "name": "大葉（紫蘇葉）",
+            "amount": "隨意",
+            "note": "切絲"
+          },
+          {
+            "name": "海苔絲",
+            "amount": "隨意"
+          }
+        ]
+      },
+      {
+        "group": "白醬",
+        "items": [
+          {
+            "name": "嫩豆腐",
+            "amount": "1 塊",
+            "note": "小盒裝"
+          },
+          {
+            "name": "起司粉",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "牛奶",
+            "amount": "70 ml"
+          },
+          {
+            "name": "鰹魚風味露",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "白出汁（白高湯）",
+            "amount": "1 小匙"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "先把嫩豆腐和起司粉放入容器，用打蛋器攪拌均勻。",
+      "加入鰹魚風味露和白出汁拌勻。",
+      "最後加入牛奶攪拌均勻成冷白醬。",
+      "烏龍麵煮好後過冷水、瀝乾，放入碗中。",
+      "淋上白醬，放上明太子、大葉絲、海苔絲，吃之前拌勻。"
+    ],
+    "tips": [
+      "這是模仿丸龜製麵的限定口味，用豆腐代替鮮奶油，口味比較清爽。",
+      "大葉捲起來切細絲，再抓鬆就可以用了。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "eggplant-kabayaki",
+    "name": "蒲燒茄子",
+    "emoji": "🍆",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "2 人份",
+    "techniques": [
+      "煎"
+    ],
+    "seasons": [
+      "夏",
+      "秋"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/shorts/amS-q9jG7Dw",
+      "youtubeId": "amS-q9jG7Dw",
+      "title": "【鰻を超えた！なすの蒲焼き風】とろうま♡メイン級のおいしさ",
+      "channel": "まいのごはん。"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "茄子",
+            "amount": "大的 2 根（約 250 g）",
+            "note": "一般大小的約 3 根"
+          },
+          {
+            "name": "太白粉",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "沙拉油",
+            "amount": "4–5 大匙"
+          },
+          {
+            "name": "白芝麻",
+            "amount": "1/2 大匙"
+          }
+        ]
+      },
+      {
+        "group": "醬汁 A",
+        "items": [
+          {
+            "name": "醬油",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "糖",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "味醂",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "料理酒",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "醋",
+            "amount": "1/2 大匙"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "茄子切掉蒂頭，縱向切成 5–7 mm 厚的片，再橫切成一半，泡水約 5 分鐘。瀝乾後用廚房紙巾壓乾水分。",
+      "醬汁 A 的材料先混合好。",
+      "茄子和太白粉一起放進塑膠袋，搖一搖讓每片都沾上粉。",
+      "平底鍋倒沙拉油，中火加熱，茄子皮朝下排入，每面煎約 3 分鐘。",
+      "轉小火，倒入醬汁 A，快速讓每片都沾上醬汁後關火，撒上白芝麻。"
+    ],
+    "tips": [
+      "醬汁很容易焦，一定要轉小火、動作要快。",
+      "原作者用長茄子（切半）；一般大小的茄子用 3 根、只縱切不用橫切。",
+      "放在白飯上做成蒲燒茄子丼超下飯，放涼吃也好吃；可以撒點山椒粉或加辣椒。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "salmon-curry-cream",
+    "name": "和風奶香咖哩鮭魚",
+    "emoji": "🐟",
+    "category": "日式",
+    "difficulty": 2,
+    "servings": "1 人份",
+    "techniques": [
+      "煎",
+      "煮"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=-7shlr12cnY",
+      "youtubeId": "-7shlr12cnY",
+      "title": "和風奶香咖哩鮭魚×優格馬鈴薯沙拉｜MASAの料理ABC",
+      "channel": "MASA's Cooking ABC"
+    },
+    "ingredients": [
+      {
+        "group": "鮭魚與醃料",
+        "items": [
+          {
+            "name": "鮭魚",
+            "amount": "1/2 片",
+            "note": "帶皮，切塊"
+          },
+          {
+            "name": "白酒",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "砂糖",
+            "amount": "1/2 小匙"
+          },
+          {
+            "name": "鹽",
+            "amount": "1/4 小匙"
+          }
+        ]
+      },
+      {
+        "group": "蔬菜",
+        "items": [
+          {
+            "name": "洋蔥",
+            "amount": "1/4 顆",
+            "note": "切絲"
+          },
+          {
+            "name": "高麗菜",
+            "amount": "約 100 g",
+            "note": "切大片"
+          },
+          {
+            "name": "豌豆莢",
+            "amount": "4–5 根",
+            "note": "先汆燙"
+          }
+        ]
+      },
+      {
+        "group": "醬汁",
+        "items": [
+          {
+            "name": "奶油",
+            "amount": "10 g"
+          },
+          {
+            "name": "咖哩粉",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "日式高湯",
+            "amount": "150 cc"
+          },
+          {
+            "name": "鮮奶油",
+            "amount": "100 cc"
+          },
+          {
+            "name": "味醂",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "醬油",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "鹽、黑胡椒",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "搭配",
+        "items": [
+          {
+            "name": "法棍麵包",
+            "amount": "3 片（厚切）"
+          },
+          {
+            "name": "橄欖油",
+            "amount": "適量"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "鮭魚檢查有沒有小刺，切成塊。用白酒、砂糖、鹽抓勻，醃 30 分鐘。",
+      "醃好後把滲出的水分用紙巾擦乾（這些水帶有腥味）。",
+      "平底鍋加少許油，鮭魚煎到表面金黃（帶皮那面要煎香），先取出。",
+      "同一鍋放奶油，炒洋蔥絲，再加入高麗菜稍微拌炒（高麗菜保留口感，不要炒太軟）。",
+      "撒入咖哩粉炒香，倒入日式高湯、鮮奶油，加味醂和醬油煮滾。",
+      "放回鮭魚一起煮一下，用鹽和黑胡椒調味，最後加入汆燙好的豌豆莢。",
+      "法棍麵包用橄欖油煎到兩面金黃，沾醬汁一起吃。"
+    ],
+    "tips": [
+      "鮭魚皮要煎到香脆，吃起來完全沒有腥味。",
+      "日式高湯讓奶醬帶出溫和的鮮味。",
+      "這個醬汁拌義大利麵也很好吃。",
+      "沒有鮭魚可以改用雞腿肉，一樣先醃過、雞皮煎到酥脆再煮。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "yogurt-garlic-potato-salad",
+    "name": "優格蒜香馬鈴薯沙拉",
+    "emoji": "🥔",
+    "category": "沙拉",
+    "difficulty": 2,
+    "servings": "1–2 人份",
+    "techniques": [
+      "蒸",
+      "煎",
+      "拌"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=-7shlr12cnY",
+      "youtubeId": "-7shlr12cnY",
+      "title": "和風奶香咖哩鮭魚×優格馬鈴薯沙拉｜MASAの料理ABC",
+      "channel": "MASA's Cooking ABC"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "馬鈴薯",
+            "amount": "200 g",
+            "note": "切塊"
+          },
+          {
+            "name": "培根",
+            "amount": "2 片"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "2 瓣",
+            "note": "切片"
+          },
+          {
+            "name": "洋蔥",
+            "amount": "1/4 顆",
+            "note": "切絲泡水"
+          },
+          {
+            "name": "水煮蛋",
+            "amount": "1 顆"
+          },
+          {
+            "name": "香菜",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "調味",
+        "items": [
+          {
+            "name": "優格",
+            "amount": "80 g",
+            "note": "無糖，先瀝掉水分"
+          },
+          {
+            "name": "美乃滋",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "芥末籽醬",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "鹽、黑胡椒",
+            "amount": "適量"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "優格用鋪了廚房紙巾的篩網瀝掉水分（會瀝出不少水）。",
+      "洋蔥切絲泡水，辛辣味去掉後撈起瀝乾（泡太久營養會流失）。",
+      "馬鈴薯切塊，放進蒸籠蒸熟。",
+      "培根放入冷鍋再開火，慢慢煎到油脂釋出、變脆，取出用紙巾吸油後切碎。",
+      "鍋中留下的培根油別倒掉，用來煎蒜片和蒸好的馬鈴薯，煎到表面金黃，直接在鍋裡把馬鈴薯壓碎。",
+      "把馬鈴薯放入大碗，加美乃滋、優格、芥末籽醬、洋蔥絲、培根碎拌勻。",
+      "加入切塊的水煮蛋、香菜，用鹽和黑胡椒調味即可。"
+    ],
+    "tips": [
+      "培根要從冷鍋開始煎，油脂才會充分釋出。",
+      "蒸好的馬鈴薯直接做沙拉也可以，但先用培根油煎過香氣完全不同。",
+      "加優格吃起來比傳統馬鈴薯沙拉清爽。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "kimchi-chicken-breast",
+    "name": "韓式泡菜炒雞胸",
+    "emoji": "🌶️",
+    "category": "韓式",
+    "difficulty": 2,
+    "servings": "1 人份",
+    "techniques": [
+      "煮",
+      "炒"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=U-gC2Q9DoDQ",
+      "youtubeId": "U-gC2Q9DoDQ",
+      "title": "高蛋白低脂！韓式泡菜炒雞胸定食｜MASAの料理ABC",
+      "channel": "MASA's Cooking ABC"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "雞胸肉",
+            "amount": "200 g"
+          },
+          {
+            "name": "鹽",
+            "amount": "1/4 小匙",
+            "note": "醃雞胸用"
+          },
+          {
+            "name": "太白粉",
+            "amount": "適量"
+          },
+          {
+            "name": "韓式泡菜",
+            "amount": "150 g"
+          },
+          {
+            "name": "高麗菜",
+            "amount": "100 g"
+          },
+          {
+            "name": "洋蔥",
+            "amount": "1/4 顆",
+            "note": "切粗絲"
+          },
+          {
+            "name": "蔥",
+            "amount": "1 支",
+            "note": "蔥白、蔥綠分開切段"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "1 瓣",
+            "note": "切片"
+          }
+        ]
+      },
+      {
+        "group": "調味料",
+        "items": [
+          {
+            "name": "味醂",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "砂糖",
+            "amount": "1/3 小匙"
+          },
+          {
+            "name": "醬油",
+            "amount": "2 小匙"
+          },
+          {
+            "name": "白芝麻",
+            "amount": "少許"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "雞胸肉斜切成片（斷面大、受熱均勻不易柴），撒 1/4 小匙鹽抓勻。",
+      "每片雞胸肉均勻沾上一層太白粉。",
+      "煮一鍋滾水，把雞胸肉片放入汆燙至熟（中華料理的「水晶雞」手法），撈起泡冰水。",
+      "撈出瀝乾水分（可放在竹簾上避免黏住），炒之前一定要瀝乾，才不會出水。",
+      "平底鍋少許油，蒜片炒香，加入洋蔥和蔥白拌炒，再加高麗菜。",
+      "加入韓式泡菜，炒到泡菜熟透（酸味會變柔和）。",
+      "放入雞胸肉，先加味醂和砂糖讓甜味入味，再加醬油拌炒。",
+      "最後放蔥綠稍微拌一下，盛盤撒白芝麻。"
+    ],
+    "tips": [
+      "雞胸肉沾太白粉再汆燙，口感滑嫩多汁，完全不柴，也不需要太多油。",
+      "泡菜本身已經有很多調味，不用再加太多調味料。",
+      "不想吃肉可以改用豆干。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "tomato-chicken-don",
+    "name": "番茄雞肉丼飯",
+    "emoji": "🍅",
+    "category": "丼飯",
+    "difficulty": 1,
+    "servings": "2–3 人份",
+    "techniques": [
+      "煎",
+      "炒"
+    ],
+    "seasons": [
+      "夏"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=0Ig6Nt4XmVk",
+      "youtubeId": "0Ig6Nt4XmVk",
+      "title": "番茄雞肉丼飯｜Rosalina's Kitchen 蘿潔塔的廚房",
+      "channel": "Rosalina's Kitchen 蘿潔塔的廚房"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "雞胸肉",
+            "amount": "1 份（約 350 g）",
+            "note": "雞腿肉也可以"
+          },
+          {
+            "name": "牛番茄",
+            "amount": "中小顆 3 顆",
+            "note": "去皮去籽後約 200 g，籽留著做醬汁"
+          },
+          {
+            "name": "小黃瓜",
+            "amount": "2 條",
+            "note": "去籽後約 200 g，可換成青椒"
+          },
+          {
+            "name": "蒜末",
+            "amount": "20 g",
+            "note": "可省略，但有加比較好吃"
+          },
+          {
+            "name": "辣椒",
+            "amount": "1 條",
+            "note": "可省略"
+          },
+          {
+            "name": "太白粉",
+            "amount": "適量",
+            "note": "可用麵粉替代或省略"
+          },
+          {
+            "name": "橄欖油",
+            "amount": "適量",
+            "note": "煎雞肉用多一點"
+          },
+          {
+            "name": "白飯",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "醃料",
+        "items": [
+          {
+            "name": "鹽",
+            "amount": "1–2 小撮"
+          },
+          {
+            "name": "糖",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "白胡椒粉",
+            "amount": "1 匙"
+          },
+          {
+            "name": "清酒",
+            "amount": "1.5 匙"
+          },
+          {
+            "name": "醬油",
+            "amount": "5 cc"
+          }
+        ]
+      },
+      {
+        "group": "醬汁",
+        "items": [
+          {
+            "name": "番茄籽（剁碎）",
+            "amount": "3 顆份"
+          },
+          {
+            "name": "白味噌",
+            "amount": "20 g"
+          },
+          {
+            "name": "醬油",
+            "amount": "10 ml"
+          },
+          {
+            "name": "白胡椒粉",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "清酒",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "醋",
+            "amount": "1.5 匙",
+            "note": "起鍋前可再補一點"
+          },
+          {
+            "name": "糖",
+            "amount": "1 小匙"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "雞胸肉洗淨瀝乾，逆紋橫切成厚片（切斷長纖維，吃起來比較嫩）。",
+      "用鹽、糖、白胡椒粉、清酒、醬油抓醃到水分吸收，放保鮮盒冷藏 15 分鐘。",
+      "番茄去皮、對半切，用小刀沿著籽劃一圈再用湯匙挖出籽；果肉切大塊。籽留下剁碎。",
+      "小黃瓜去頭尾、剖半挖掉籽（煮的時候才不會水水的），滾刀切塊。",
+      "剁碎的番茄籽加入白味噌、醬油、白胡椒粉、清酒、醋、糖，攪拌均勻成醬汁。",
+      "醃好的雞肉表面沾薄薄一層太白粉，拍掉多餘的粉。",
+      "中火熱鍋，放多一點橄欖油，用半煎炸的方式把雞肉煎到表面焦香（很快就熟，不要煎太久），先取出。",
+      "鍋中補一點油，中小火爆香蒜末和辣椒，倒入醬汁煮到滾、稍微濃稠。",
+      "放入小黃瓜和番茄塊拌炒，讓醬汁和蔬菜融合。",
+      "放回雞肉拌勻，裹上醬汁就關火；起鍋前可再補一點醋更開胃，盛在白飯上。"
+    ],
+    "tips": [
+      "雞肉沾太白粉可以防止脫水，才不會又乾又柴。",
+      "雞肉已經是熟的，最後只要裹上醬汁就好，不要久煮。",
+      "番茄不去皮也可以，去皮口感比較軟。"
+    ],
+    "pending": [
+      "醃料的白胡椒粉「1 匙」和清酒「1.5 匙」、醬汁的醋「1.5 匙」，原文沒寫是大匙還是小匙，建議先用小匙試試。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": []
+  },
+  {
+    "id": "shio-kombu-chicken-dango",
+    "name": "鹽昆布雞肉團子",
+    "emoji": "🍡",
+    "category": "日式",
+    "difficulty": 1,
+    "servings": "4 顆",
+    "techniques": [
+      "煎"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=yHWKlW-K1MA",
+      "youtubeId": "yHWKlW-K1MA",
+      "title": "15分鐘料理！三款雞肉丸｜索艾克 Soac",
+      "channel": "索艾克 Soac"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "雞腿絞肉",
+            "amount": "100 g",
+            "note": "也可換豬絞肉或牛絞肉"
+          },
+          {
+            "name": "蔥花",
+            "amount": "1 大匙",
+            "note": "切細一點"
+          },
+          {
+            "name": "蒜泥",
+            "amount": "2 瓣"
+          },
+          {
+            "name": "白胡椒",
+            "amount": "少許"
+          },
+          {
+            "name": "鹽昆布",
+            "amount": "1 大匙再少一點",
+            "note": "本身有鹹味，不用另外加鹽"
+          },
+          {
+            "name": "地瓜粉",
+            "amount": "一小盤",
+            "note": "表面沾裹用，太白粉、麵粉也可以"
+          },
+          {
+            "name": "韓國紫蘇葉",
+            "amount": "1 片",
+            "note": "裝飾用"
+          },
+          {
+            "name": "油",
+            "amount": "適量"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "雞絞肉、蔥花、蒜泥、白胡椒、鹽昆布拌勻，分成四等分捏成球狀。",
+      "表面沾上薄薄一層地瓜粉定型（不沾也可以，只是形狀比較不工整）。",
+      "鍋子燒熱下油，中大火把兩面煎到上色，再轉中小火把中心煎熟（約 3–5 分鐘）。",
+      "試吃確認鹹度，不夠的話補點鹽或再撒些鹽昆布。紫蘇葉鋪底盛盤。"
+    ],
+    "tips": [
+      "怕煎不熟或油煙多，可以捏成圓餅狀。",
+      "按壓感受硬度，越熟會越硬。",
+      "想要更酥可以用炸的。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "rice-paper-chicken-bites",
+    "name": "脆皮米紙雞球",
+    "emoji": "🥟",
+    "category": "點心",
+    "difficulty": 1,
+    "servings": "2 條（約 10 小顆）",
+    "techniques": [
+      "烤"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=yHWKlW-K1MA",
+      "youtubeId": "yHWKlW-K1MA",
+      "title": "15分鐘料理！三款雞肉丸｜索艾克 Soac",
+      "channel": "索艾克 Soac"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "雞胸絞肉",
+            "amount": "100 g"
+          },
+          {
+            "name": "高麗菜絲",
+            "amount": "25 g"
+          },
+          {
+            "name": "米紙",
+            "amount": "2 張"
+          },
+          {
+            "name": "特級橄欖油",
+            "amount": "少許",
+            "note": "用刷的或用噴的都可以"
+          },
+          {
+            "name": "蔥花",
+            "amount": "少許"
+          }
+        ]
+      },
+      {
+        "group": "調味料",
+        "items": [
+          {
+            "name": "醬油",
+            "amount": "1 小匙"
+          },
+          {
+            "name": "鹽、白胡椒",
+            "amount": "少許"
+          },
+          {
+            "name": "甜椒粉",
+            "amount": "一點點"
+          },
+          {
+            "name": "美乃滋",
+            "amount": "少許"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "雞絞肉加高麗菜絲、醬油、鹽、白胡椒拌勻，靜置一下讓高麗菜軟化。",
+      "米紙快速過水後鋪平，取一半的肉餡放在米紙上排成長條狀，捲起來；共做 2 條。",
+      "用剪刀剪成小段，兩面都噴上橄欖油，放入氣炸鍋 190°C 氣炸 11–12 分鐘。",
+      "甜椒粉和美乃滋拌勻，出爐後擠上醬、撒蔥花。"
+    ],
+    "tips": [
+      "需要氣炸鍋。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "chicken-ball-miso-soup",
+    "name": "雞肉丸味噌湯",
+    "emoji": "🍲",
+    "category": "湯品",
+    "difficulty": 1,
+    "servings": "2 碗",
+    "techniques": [
+      "煮"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=yHWKlW-K1MA",
+      "youtubeId": "yHWKlW-K1MA",
+      "title": "15分鐘料理！三款雞肉丸｜索艾克 Soac",
+      "channel": "索艾克 Soac"
+    },
+    "ingredients": [
+      {
+        "group": "湯",
+        "items": [
+          {
+            "name": "雞高湯",
+            "amount": "400 ml"
+          },
+          {
+            "name": "味噌",
+            "amount": "1–2 大匙"
+          },
+          {
+            "name": "舞菇（或任何菇類）",
+            "amount": "1/2 包",
+            "note": "切小塊"
+          },
+          {
+            "name": "嫩豆腐",
+            "amount": "1/4 盒"
+          },
+          {
+            "name": "蔥白",
+            "amount": "1 根",
+            "note": "切段"
+          },
+          {
+            "name": "蔥綠",
+            "amount": "少許",
+            "note": "裝飾用"
+          }
+        ]
+      },
+      {
+        "group": "雞肉丸",
+        "items": [
+          {
+            "name": "雞胸絞肉",
+            "amount": "100 g"
+          },
+          {
+            "name": "鹽、白胡椒",
+            "amount": "少許"
+          },
+          {
+            "name": "麻油",
+            "amount": "1/2 小匙"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "雞高湯煮滾，味噌放在湯勺上用筷子攪散溶入湯中，試喝調整鹹度。",
+      "加入菇類、豆腐、蔥白，煮滾後轉小火。",
+      "雞絞肉加鹽、白胡椒、麻油拌勻，用湯勺整成球狀。",
+      "放入微滾的湯中煮約 3–5 分鐘（別煮太久以免變老），起鍋撒上蔥綠。"
+    ],
+    "tips": [
+      "雞肉丸不要煮太久，保持微滾才嫩。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "korean-potato-pancake",
+    "name": "韓式脆皮馬鈴薯煎餅",
+    "emoji": "🥔",
+    "category": "韓式",
+    "difficulty": 1,
+    "servings": "約 10 片小煎餅",
+    "techniques": [
+      "煎"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/shorts/1UzhO2GCO80",
+      "youtubeId": "1UzhO2GCO80",
+      "title": "🥔 韓式脆皮馬鈴薯煎餅",
+      "channel": "我是拌飯人"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "馬鈴薯",
+            "amount": "500 g",
+            "note": "削皮切塊"
+          },
+          {
+            "name": "洋蔥",
+            "amount": "1 顆",
+            "note": "增加風味"
+          },
+          {
+            "name": "鹽",
+            "amount": "半匙"
+          },
+          {
+            "name": "油",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "沾醬",
+        "items": [
+          {
+            "name": "醬油",
+            "amount": "適量"
+          },
+          {
+            "name": "水",
+            "amount": "適量"
+          },
+          {
+            "name": "米醋",
+            "amount": "適量"
+          },
+          {
+            "name": "辣椒粉",
+            "amount": "少許"
+          },
+          {
+            "name": "香油",
+            "amount": "一點"
+          },
+          {
+            "name": "砂糖",
+            "amount": "少許"
+          },
+          {
+            "name": "芝麻",
+            "amount": "少許"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "馬鈴薯削皮切塊，和洋蔥、半匙鹽一起放進果汁機打成泥汁。",
+      "倒進濾網過濾，濾網上留下馬鈴薯渣，濾出的汁液接在碗裡靜置。",
+      "趁等待的時間調沾醬：醬油、水、米醋、辣椒粉、香油、砂糖、芝麻拌勻。",
+      "汁液靜置後，底部會沉澱出白色的馬鈴薯澱粉，把上層的水倒掉，只留澱粉。",
+      "把馬鈴薯渣倒回有澱粉的碗裡，攪拌均勻成麵糊。",
+      "平底鍋上一點油，小火，把麵糊舀成一片片小圓餅（做成一大片不好翻面）。",
+      "煎到兩面焦黃即可，沾醬享用。"
+    ],
+    "tips": [
+      "不用麵粉，只靠馬鈴薯本身沉澱的澱粉，就能做出外酥內 Q 的口感，也是無麩質。",
+      "做成小片比較好翻面，也比較可愛。"
+    ],
+    "pending": [
+      "影片只說「半匙」，沒有講是什麼，推測是鹽。",
+      "沾醬每樣材料的份量影片沒有標示，材料名稱是從語音辨識推測的，請依口味調整。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": []
+  },
+  {
+    "id": "salmon-miso-chanchan-yaki",
+    "name": "北海道鮭魚味噌蔬菜燒",
+    "emoji": "🐟",
+    "category": "日式",
+    "difficulty": 2,
+    "servings": "4 人份",
+    "techniques": [
+      "煎",
+      "炒",
+      "燉"
+    ],
+    "seasons": [
+      "冬"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=rlTbwV3cj9g",
+      "youtubeId": "rlTbwV3cj9g",
+      "title": "簡單晚餐：北海道鮭魚蔬菜燒、桌邊小菜、剩下食材煮碗湯｜蘿潔塔的廚房",
+      "channel": "Rosalina's Kitchen 蘿潔塔的廚房"
+    },
+    "ingredients": [
+      {
+        "group": "鮭魚",
+        "items": [
+          {
+            "name": "鮭魚",
+            "amount": "約 450 g（4 片）",
+            "note": "輪切鮭魚去掉中間魚骨，魚骨留著煮湯"
+          },
+          {
+            "name": "鹽、白胡椒粉",
+            "amount": "少許"
+          },
+          {
+            "name": "清酒",
+            "amount": "少許",
+            "note": "醃漬去腥"
+          }
+        ]
+      },
+      {
+        "group": "蔬菜",
+        "items": [
+          {
+            "name": "高麗菜",
+            "amount": "半顆",
+            "note": "梗切細、葉子切或撕成片，分開放"
+          },
+          {
+            "name": "紅蘿蔔",
+            "amount": "適量",
+            "note": "切半圓片"
+          },
+          {
+            "name": "洋蔥",
+            "amount": "1 顆",
+            "note": "切成 1/8 月牙狀"
+          },
+          {
+            "name": "菇類",
+            "amount": "1 盒",
+            "note": "去根剝散"
+          },
+          {
+            "name": "奶油",
+            "amount": "10 g"
+          },
+          {
+            "name": "鹽、胡椒",
+            "amount": "少許"
+          },
+          {
+            "name": "蔥花",
+            "amount": "少許",
+            "note": "裝飾"
+          }
+        ]
+      },
+      {
+        "group": "味噌醬",
+        "items": [
+          {
+            "name": "紅味噌＋白味噌",
+            "amount": "共 35 g",
+            "note": "白味噌比較甜，兩種混合"
+          },
+          {
+            "name": "味醂",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "清酒",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "糖",
+            "amount": "5 g",
+            "note": "味醂有含糖就不用加"
+          },
+          {
+            "name": "蒜泥",
+            "amount": "約 10 g",
+            "note": "不喜歡可省略"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "輪切鮭魚從中間切開，去掉中間的魚骨（留著煮湯），用夾子拔掉大刺。側邊魚骨先保留，煎的時候比較不會散。",
+      "兩面抹上鹽和白胡椒粉，放進保鮮盒淋上清酒按摩均勻，冷藏醃漬。",
+      "高麗菜去芯洗淨，梗切細、葉切片；紅蘿蔔切半圓片、洋蔥切月牙、菇類剝散。",
+      "味噌、味醂、清酒、糖、蒜泥混合均勻成味噌醬。",
+      "鮭魚取出用紙巾吸乾表面水分（煎的時候才不會噴油）。中火熱鍋加油，放入鮭魚後轉小一點，一面煎約 3 分鐘再翻面煎約 2 分鐘，到兩面金黃、約九分熟，先取出。",
+      "用紙巾吸掉鍋中大部分的油，中火放入奶油，融化起泡後放高麗菜梗、洋蔥、紅蘿蔔拌炒，加少許鹽和胡椒。",
+      "加入菇類炒到表面焦香，再放上高麗菜葉，蓋上鍋蓋燜 30–40 秒讓高麗菜變軟（怕燒焦可加約 30 cc 水），再翻炒均勻。",
+      "倒入味噌醬翻拌，讓蔬菜都沾到醬汁，把鮭魚擺在蔬菜上。",
+      "蓋上鍋蓋，中小火燜 5 分鐘，撒上蔥花，整鍋上桌。"
+    ],
+    "tips": [
+      "超市的薄鮭魚片兩面各煎約 1 分鐘就可以了；煎的時間依厚度調整。",
+      "蔬菜燜煮時間依喜歡的口感決定；這道菜不加鮭魚也很好吃。",
+      "鍋底的燉煮湯汁淋在白飯上超下飯。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "stir-fried-bean-sprouts-chayote",
+    "name": "清炒豆芽龍鬚菜",
+    "emoji": "🌱",
+    "category": "家常菜",
+    "difficulty": 1,
+    "servings": "2–4 人份（小菜）",
+    "techniques": [
+      "炒"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=rlTbwV3cj9g",
+      "youtubeId": "rlTbwV3cj9g",
+      "title": "簡單晚餐：北海道鮭魚蔬菜燒、桌邊小菜、剩下食材煮碗湯｜蘿潔塔的廚房",
+      "channel": "Rosalina's Kitchen 蘿潔塔的廚房"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "豆芽菜",
+            "amount": "適量"
+          },
+          {
+            "name": "龍鬚菜",
+            "amount": "適量"
+          },
+          {
+            "name": "油",
+            "amount": "少許"
+          },
+          {
+            "name": "鹽",
+            "amount": "少許"
+          },
+          {
+            "name": "胡椒粉",
+            "amount": "少許"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "鍋子熱油，放入豆芽菜，加一點鹽和胡椒粉翻炒一下。",
+      "放入龍鬚菜輕輕翻炒均勻。",
+      "再用少許鹽和胡椒調味即完成。"
+    ],
+    "tips": [
+      "用冰箱剩下的蔬菜做的快速小菜；豆芽菜跟什麼菜搭配都好吃。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "salmon-bone-miso-soup",
+    "name": "鮭魚骨番茄味噌湯",
+    "emoji": "🍲",
+    "category": "湯品",
+    "difficulty": 1,
+    "servings": "4 人份",
+    "techniques": [
+      "煮"
+    ],
+    "seasons": [
+      "冬"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=rlTbwV3cj9g",
+      "youtubeId": "rlTbwV3cj9g",
+      "title": "簡單晚餐：北海道鮭魚蔬菜燒、桌邊小菜、剩下食材煮碗湯｜蘿潔塔的廚房",
+      "channel": "Rosalina's Kitchen 蘿潔塔的廚房"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "鮭魚骨",
+            "amount": "1 份",
+            "note": "用少許清酒醃過"
+          },
+          {
+            "name": "番茄",
+            "amount": "適量",
+            "note": "切塊，熬出甜味"
+          },
+          {
+            "name": "昆布小魚高湯包",
+            "amount": "1 包"
+          },
+          {
+            "name": "水",
+            "amount": "適量"
+          },
+          {
+            "name": "味醂",
+            "amount": "一點"
+          },
+          {
+            "name": "醬油",
+            "amount": "一點"
+          },
+          {
+            "name": "味噌",
+            "amount": "適量"
+          },
+          {
+            "name": "喜歡的蔬菜",
+            "amount": "適量"
+          },
+          {
+            "name": "蔥花",
+            "amount": "少許"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "鍋中加水，放入番茄塊熬湯底。",
+      "放入鮭魚骨和昆布小魚高湯包一起熬煮，加一點味醂和醬油調味。",
+      "煮滾後撈掉浮沫，轉小火慢慢燉煮。",
+      "放入味噌攪拌溶解，最後加入喜歡的蔬菜煮熟，撒上蔥花。"
+    ],
+    "tips": [
+      "利用剩下的魚骨煮湯，惜福不浪費。",
+      "加番茄一起熬可以帶出自然的鮮甜。"
+    ],
+    "pending": [
+      "水、味噌的份量影片沒有標示，依口味調整。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": []
+  },
+  {
+    "id": "seafood-tofu-rice-bowl",
+    "name": "海鮮豆腐蓋飯",
+    "emoji": "🦐",
+    "category": "丼飯",
+    "difficulty": 2,
+    "servings": "2 人份",
+    "techniques": [
+      "炒",
+      "燉"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=b8Mn30WBE9I",
+      "youtubeId": "b8Mn30WBE9I",
+      "title": "一鍋到底，簡單不失美味～海鮮豆腐蓋飯｜蘿潔塔的廚房",
+      "channel": "Rosalina's Kitchen 蘿潔塔的廚房"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "油豆腐",
+            "amount": "約 300 g",
+            "note": "熱水沖掉多餘的油，切三角形"
+          },
+          {
+            "name": "小松菜",
+            "amount": "約 100 g",
+            "note": "任何喜歡的青菜都可以"
+          },
+          {
+            "name": "青蔥",
+            "amount": "2–3 株",
+            "note": "蔥白、蔥綠分開"
+          },
+          {
+            "name": "辣椒",
+            "amount": "半條",
+            "note": "可省略"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "2 瓣",
+            "note": "切末"
+          },
+          {
+            "name": "薑片",
+            "amount": "5–6 片",
+            "note": "老薑 3 片就夠"
+          },
+          {
+            "name": "蝦仁",
+            "amount": "12 隻"
+          },
+          {
+            "name": "蛤蜊",
+            "amount": "10 顆",
+            "note": "先吐沙"
+          },
+          {
+            "name": "鹽",
+            "amount": "一小撮"
+          },
+          {
+            "name": "白胡椒",
+            "amount": "一小撮"
+          },
+          {
+            "name": "白飯",
+            "amount": "適量",
+            "note": "米水比例 1:1，先泡 30 分鐘"
+          }
+        ]
+      },
+      {
+        "group": "醬料",
+        "items": [
+          {
+            "name": "水",
+            "amount": "約 350 ml"
+          },
+          {
+            "name": "醬油",
+            "amount": "10 ml"
+          },
+          {
+            "name": "蠔油",
+            "amount": "10 ml"
+          },
+          {
+            "name": "清酒",
+            "amount": "15 ml"
+          },
+          {
+            "name": "糖",
+            "amount": "3 g"
+          },
+          {
+            "name": "香油",
+            "amount": "少許"
+          }
+        ]
+      },
+      {
+        "group": "勾芡",
+        "items": [
+          {
+            "name": "太白粉",
+            "amount": "6 g"
+          },
+          {
+            "name": "水",
+            "amount": "30 ml"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "米洗淨，米水比例 1:1 泡 30 分鐘後開火煮飯。",
+      "油豆腐用熱水沖掉多餘的油，瀝乾切成三角形（有切面比較好入味）。青菜切段；蔥切段，蔥白蔥綠分開；薑切片、蒜切末。",
+      "中火熱鍋加油，放入青菜和蝦仁稍微炒，加一小撮鹽和白胡椒；蝦仁炒到表面轉紅、約六分熟就先盛起。",
+      "鍋子不用洗，加適量油，放入薑片、蔥白、辣椒、蒜末炒到香、蒜末微焦黃。",
+      "放入油豆腐一起拌炒均勻。",
+      "把豆腐推到一邊，在鍋底倒入清酒、香油、蠔油、醬油、糖，煮到糖溶解、香味出來，再和豆腐拌炒到醬汁被吸收。",
+      "加入約 350 ml 水煮滾，放入蛤蜊提鮮；蛤蜊開口後先挑出來去殼，豆腐繼續燒到顏色變深、入味。",
+      "蛤蜊肉、蝦仁和青菜放回鍋中輕輕拌勻。",
+      "把料推到一邊，在湯汁處倒入太白粉水勾芡，變濃稠後再和材料拌勻。",
+      "放入蔥綠拌一下就關火，盛在白飯上，記得多淋點湯汁。"
+    ],
+    "tips": [
+      "蝦仁先炒到六分熟就起鍋，最後再回鍋才不會老。",
+      "沒有高湯就用蛤蜊提鮮；有高湯可以不用加蛤蜊。",
+      "蝦頭可以留下來熬湯。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "tomato-potato-beef-stew",
+    "name": "番茄馬鈴薯燉牛肉",
+    "emoji": "🍖",
+    "category": "家常菜",
+    "difficulty": 2,
+    "servings": "4 人份",
+    "techniques": [
+      "炒",
+      "燉"
+    ],
+    "seasons": [
+      "秋",
+      "冬"
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=KKgYerMFu5U",
+      "youtubeId": "KKgYerMFu5U",
+      "title": "蕃茄馬鈴薯燉牛肉，簡單家常｜蘿潔塔的廚房",
+      "channel": "Rosalina's Kitchen 蘿潔塔的廚房"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "牛肋條",
+            "amount": "700 g",
+            "note": "多餘的脂肪切下來留著煸油"
+          },
+          {
+            "name": "牛番茄",
+            "amount": "5 顆（約 750 g）",
+            "note": "3 顆去皮切丁，2 顆連皮打泥"
+          },
+          {
+            "name": "小番茄",
+            "amount": "300 g",
+            "note": "選紅一點的，打泥用"
+          },
+          {
+            "name": "馬鈴薯",
+            "amount": "1–2 顆（約 350 g）",
+            "note": "切丁"
+          },
+          {
+            "name": "紅蘿蔔",
+            "amount": "1 小條（約 200 g）",
+            "note": "切丁"
+          },
+          {
+            "name": "洋蔥",
+            "amount": "1 顆（約 280 g）",
+            "note": "切大塊"
+          },
+          {
+            "name": "青蔥",
+            "amount": "2 株",
+            "note": "切長段，蔥白蔥綠分開"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "3 大瓣",
+            "note": "留一些整瓣，其餘切末"
+          },
+          {
+            "name": "薑",
+            "amount": "7–8 片"
+          },
+          {
+            "name": "辣椒",
+            "amount": "1 條",
+            "note": "斜切，怕辣可去籽"
+          },
+          {
+            "name": "高麗菜、花椰菜",
+            "amount": "適量",
+            "note": "選用，最後放"
+          }
+        ]
+      },
+      {
+        "group": "調味料",
+        "items": [
+          {
+            "name": "糖",
+            "amount": "1 大匙"
+          },
+          {
+            "name": "醬油",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "蠔油",
+            "amount": "適量"
+          },
+          {
+            "name": "白葡萄酒或米酒",
+            "amount": "50 ml"
+          },
+          {
+            "name": "月桂葉",
+            "amount": "2 片"
+          },
+          {
+            "name": "鹽",
+            "amount": "適量"
+          },
+          {
+            "name": "黑胡椒",
+            "amount": "適量"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "3 顆牛番茄劃十字，滾水燙 20–30 秒後剝皮、切丁。另外 2 顆牛番茄（不去皮）和小番茄放入調理機打成番茄泥。",
+      "牛肉擦掉表面血水、切下多餘脂肪（留著），切成大塊（切小塊可縮短燉煮時間）。",
+      "冷水放幾片薑，放入牛肉加熱汆燙，浮沫浮上來就撈起。",
+      "冷鍋放入切下的牛脂肪，中小火煸出牛油，煸到焦焦的就取出（油不夠可補橄欖油）。",
+      "放入薑片、整瓣蒜頭、蔥白、辣椒爆香，再放入牛肉拌炒。",
+      "加 1 大匙糖炒出糖色，加 2 大匙醬油翻炒，再補一點蠔油提鮮，炒到牛肉油亮。",
+      "倒入 50 ml 白葡萄酒讓酒氣揮發，放入洋蔥和蒜末炒到洋蔥半透明。",
+      "放入番茄丁炒軟（會一直出水），再倒入番茄泥，加黑胡椒和 2 片月桂葉。",
+      "蓋上鍋蓋燉煮約 30 分鐘，中途不要開蓋。",
+      "試味道，不夠就補點鹽。放入紅蘿蔔丁和馬鈴薯丁，轉小火蓋鍋蓋再燉 15 分鐘。",
+      "關火燜 15 分鐘，再開火加熱，最後放入高麗菜葉和燙熟的花椰菜稍微煮一下即可。"
+    ],
+    "tips": [
+      "整鍋不加一滴水，完全用番茄的水分燉煮，番茄味很濃郁。",
+      "牛肉切大塊口感好，想縮短時間就切小塊。",
+      "紅蘿蔔切丁比較不明顯，不愛吃紅蘿蔔的人也能接受。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
+  },
+  {
+    "id": "rice-paper-shrimp-cheung-fun",
+    "name": "米紙鮮蝦腸粉",
+    "emoji": "🦐",
+    "category": "港式",
+    "difficulty": 2,
+    "servings": "1 人份",
+    "techniques": [
+      "蒸"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=WBBBMP4b0b8",
+      "youtubeId": "WBBBMP4b0b8",
+      "title": "【米紙鮮蝦腸粉】輕鬆做出晶瑩滑嫩的韭黃鮮蝦腸粉｜岑岑料理食事",
+      "channel": "岑岑料理食事"
+    },
+    "ingredients": [
+      {
+        "group": "腸粉",
+        "items": [
+          {
+            "name": "米紙",
+            "amount": "6 張",
+            "note": "方形比較好折，圓形也可以"
+          },
+          {
+            "name": "鮮蝦",
+            "amount": "6 隻",
+            "note": "去殼去腸泥，選新鮮大隻的"
+          },
+          {
+            "name": "韭黃",
+            "amount": "30 g",
+            "note": "切小段，買不到可用青蔥"
+          },
+          {
+            "name": "青蔥",
+            "amount": "2 支",
+            "note": "蔥綠切蔥花裝飾"
+          },
+          {
+            "name": "米酒",
+            "amount": "1 茶匙"
+          },
+          {
+            "name": "白胡椒粉",
+            "amount": "少許"
+          },
+          {
+            "name": "太白粉",
+            "amount": "1 茶匙"
+          },
+          {
+            "name": "食用油",
+            "amount": "1 大匙",
+            "note": "抹蒸盤用"
+          }
+        ]
+      },
+      {
+        "group": "港式醬汁",
+        "items": [
+          {
+            "name": "青蔥（蔥白）",
+            "amount": "2 支",
+            "note": "切段"
+          },
+          {
+            "name": "老薑",
+            "amount": "3 片"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "2 粒",
+            "note": "拍扁去皮"
+          },
+          {
+            "name": "醬油",
+            "amount": "2 大匙（30 cc）"
+          },
+          {
+            "name": "開水",
+            "amount": "120 cc"
+          },
+          {
+            "name": "砂糖",
+            "amount": "1 茶匙"
+          },
+          {
+            "name": "魚露",
+            "amount": "1 茶匙"
+          },
+          {
+            "name": "食用油",
+            "amount": "1 茶匙"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "蒜頭拍扁去皮，老薑切薄片，韭黃切小段；青蔥的蔥白切段做醬汁，蔥綠切蔥花。",
+      "鮮蝦加入米酒、白胡椒粉、太白粉抓拌均勻（太白粉能鎖住水分，蒸好更嫩）。",
+      "小鍋放 1 茶匙油，煸香薑片、蒜頭、蔥白，加入醬油、魚露、開水、砂糖，小火煮滾後續煮 2 分鐘，過濾備用。",
+      "米紙兩面快速沾水就拿起來，放在砧板上等它自己軟化，然後對摺兩次。",
+      "放上一匙韭黃和一隻鮮蝦，慢慢捲起來；其餘依序包好。",
+      "蒸盤抹上 1 大匙油，擺上腸粉，腸粉邊緣也刷上油。",
+      "鍋中水煮滾、有明顯蒸氣後才放入腸粉，蓋上蓋子中大火蒸 6 分鐘。",
+      "取出後撒上蔥花，淋上港式醬汁即可。"
+    ],
+    "tips": [
+      "米紙只要快速沾水，不要泡到全軟，不然很難操作又容易破。",
+      "蒸盤和腸粉邊緣都要抹油，蒸好才不會黏。",
+      "一定要等水滾有蒸氣再放進去；蒸 6 分鐘就好，最多不要超過 7 分鐘，免得米紙太爛、蝦子過熟。",
+      "盤子很燙，用夾盤器取出。"
+    ],
+    "addedAt": "2026-09-29",
+    "completions": [],
+    "pending": []
   }
 ]

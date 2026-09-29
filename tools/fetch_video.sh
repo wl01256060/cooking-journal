@@ -4,7 +4,8 @@
 set -e
 URL="$1"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-ID=$(yt-dlp --print id "$URL" 2>/dev/null)
+ID=$(yt-dlp --no-playlist --print id "$URL" 2>/dev/null)
+URL="https://www.youtube.com/watch?v=$ID"  # 去掉 list= 等參數，避免抓整個播放清單
 OUT="$ROOT/.work/$ID"
 mkdir -p "$OUT" && cd "$OUT"
 
