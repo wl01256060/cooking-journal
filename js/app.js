@@ -312,7 +312,6 @@
           <div class="rcard-meta">
             <span class="chip violet">${esc(r.category)}</span>
             <span class="chip">${DIFF[r.difficulty] || ''}</span>
-            <span class="chip hide-sm">⏱ ${esc(r.time)}</span>
             ${matchedIng.slice(0, 2).map((m) => `<span class="chip blue">🥕 ${esc(m)}</span>`).join('')}
           </div>
         </div>
@@ -343,7 +342,6 @@
           <h1 class="h1">${r.emoji || ''} ${esc(r.name)}</h1>
           <div class="meta-row">
             <span class="chip violet">${DIFF[r.difficulty] || ''}</span>
-            <span class="chip">⏱ ${esc(r.time)}</span>
             <span class="chip">🍽 ${esc(r.servings)}</span>
             ${r.cost ? `<span class="chip">💰 ${esc(r.cost)}</span>` : ''}
             ${(r.techniques || []).map((x) => `<span class="chip blue">${esc(x)}</span>`).join('')}
