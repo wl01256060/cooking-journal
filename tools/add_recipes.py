@@ -7,7 +7,7 @@ def add(new):
     ids = {r["id"] for r in rs}
     for r in new:
         assert r["id"] not in ids, r["id"]
-        r.setdefault("addedAt", "2026-09-29"); r.setdefault("completions", []); r.setdefault("pending", []); r.setdefault("tips", [])
+        r.setdefault("addedAt", "2026-09-29"); r.setdefault("completions", []); r.setdefault("tips", [])
         rs.append(r); ids.add(r["id"])
     json.dump(rs, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2); open(p, "a").write("\n")
     print("total", len(rs), [r["name"] for r in new])

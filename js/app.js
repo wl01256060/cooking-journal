@@ -353,7 +353,6 @@
             <div class="muted" style="font-size:13px;margin-top:6px">${nextAt ? `再做 ${nextAt - n} 次升到 ${'★'.repeat(st + 1)}` : '已經是拿手菜了！'}</div>
           </div>
           ${last && last.improve ? `<div class="improve-note">📝 <b>上次想改進：</b>${esc(last.improve)}</div>` : ''}
-          ${r.pending && r.pending.length ? `<div class="pending-note">⚠️ <b>待確認</b>（影片中沒講清楚）<ul>${r.pending.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div>` : ''}
           ${r.video ? `<div class="source">來源：<a href="${esc(r.video.url)}" target="_blank" rel="noopener">${esc(r.video.channel)} ↗</a></div>` : ''}
         </div>
       </div>
@@ -629,7 +628,7 @@
     const base = recipes[0];
     const extra = D.map(([name, emoji, category, techniques, difficulty, seasons], i) => ({
       ...base, id: `demo-${i}`, name, emoji, category, techniques, difficulty, seasons,
-      video: null, addedAt: `2025-0${(i % 9) + 1}-01`, completions: [], pending: [],
+      video: null, addedAt: `2025-0${(i % 9) + 1}-01`, completions: [],
       ingredients: [{ group: '食材', items: [{ name: ['豬五花', '義大利麵', '馬鈴薯', '鱸魚', '白飯', '雞腿肉', '雞腿', '鮭魚', '小黃瓜', '香蕉', '竹筍', '草莓', '豆腐', '味噌'][i], amount: '適量' }, { name: '蒜頭', amount: '3 瓣' }, { name: ['醬油', '橄欖油', '洋蔥', '薑', '雞蛋', '麵粉', '迷迭香', '檸檬', '辣椒', '奶油', '排骨', '牛奶', '絞肉', '豆腐'][i], amount: '適量' }] }],
     }));
     recipes = [{ ...base, completions: [] }, ...extra];
