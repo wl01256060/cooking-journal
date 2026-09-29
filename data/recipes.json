@@ -8,8 +8,13 @@
     "time": "15 分鐘",
     "servings": "2–3 人份",
     "cost": "約 80 元",
-    "techniques": ["炒"],
-    "seasons": ["冬", "春"],
+    "techniques": [
+      "炒"
+    ],
+    "seasons": [
+      "冬",
+      "春"
+    ],
     "video": {
       "url": "https://www.youtube.com/watch?v=wQB9_M3sUnE",
       "youtubeId": "wQB9_M3sUnE",
@@ -20,19 +25,46 @@
       {
         "group": "食材",
         "items": [
-          { "name": "牛番茄", "amount": "2 顆" },
-          { "name": "雞蛋", "amount": "5–6 顆" },
-          { "name": "蔥", "amount": "少許", "note": "切段" }
+          {
+            "name": "牛番茄",
+            "amount": "2 顆"
+          },
+          {
+            "name": "雞蛋",
+            "amount": "5–6 顆"
+          },
+          {
+            "name": "蔥",
+            "amount": "少許",
+            "note": "切段"
+          }
         ]
       },
       {
         "group": "調味料",
         "items": [
-          { "name": "番茄醬", "amount": "約 2 大匙" },
-          { "name": "白胡椒粉", "amount": "少許" },
-          { "name": "食用油", "amount": "適量", "note": "炒蛋時不要太省" },
-          { "name": "水", "amount": "少許" },
-          { "name": "糖", "amount": "少許", "note": "選用，喜歡偏甜再加" }
+          {
+            "name": "番茄醬",
+            "amount": "約 2 大匙"
+          },
+          {
+            "name": "白胡椒粉",
+            "amount": "少許"
+          },
+          {
+            "name": "食用油",
+            "amount": "適量",
+            "note": "炒蛋時不要太省"
+          },
+          {
+            "name": "水",
+            "amount": "少許"
+          },
+          {
+            "name": "糖",
+            "amount": "少許",
+            "note": "選用，喜歡偏甜再加"
+          }
         ]
       }
     ],
@@ -50,6 +82,134 @@
       "先炒蛋再炒番茄，中間不用洗鍋。"
     ],
     "pending": [],
+    "addedAt": "2026-09-29",
+    "completions": []
+  },
+  {
+    "id": "one-pan-lemon-cream-pasta",
+    "name": "一鍋檸檬奶醬義大利麵",
+    "emoji": "🍋",
+    "category": "西式",
+    "difficulty": 1,
+    "time": "約 25 分鐘",
+    "servings": "1 人份",
+    "techniques": [
+      "炒",
+      "煮"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=B0ztJfD_vZE",
+      "youtubeId": "B0ztJfD_vZE",
+      "title": "一鍋檸檬奶醬義大利麵/ One pan Spaghetti Carbonara | MASAの料理ABC",
+      "channel": "MASA's Cooking ABC"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "義大利麵",
+            "amount": "120 g",
+            "note": "一般長麵，粗細可依喜好"
+          },
+          {
+            "name": "培根",
+            "amount": "2 片",
+            "note": "切小塊，喜歡可以多放或切大塊"
+          },
+          {
+            "name": "鴻禧菇",
+            "amount": "50 g",
+            "note": "剝散"
+          },
+          {
+            "name": "洋蔥",
+            "amount": "1/8 顆",
+            "note": "切絲"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "1 瓣",
+            "note": "切片，可去芽避免焦"
+          },
+          {
+            "name": "生辣椒",
+            "amount": "1/2 支",
+            "note": "切圈"
+          }
+        ]
+      },
+      {
+        "group": "醬汁",
+        "items": [
+          {
+            "name": "水",
+            "amount": "300 cc",
+            "note": "依麵的烹煮時間增減"
+          },
+          {
+            "name": "牛奶",
+            "amount": "150 cc"
+          },
+          {
+            "name": "鮮奶油",
+            "amount": "50 cc",
+            "note": "和牛奶的比例可依喜好調整"
+          },
+          {
+            "name": "起司粉",
+            "amount": "2 大匙"
+          },
+          {
+            "name": "檸檬汁",
+            "amount": "1 大匙＋依喜好",
+            "note": "起鍋前加，上桌可再擠"
+          }
+        ]
+      },
+      {
+        "group": "調味料",
+        "items": [
+          {
+            "name": "沙拉油",
+            "amount": "適量"
+          },
+          {
+            "name": "鹽",
+            "amount": "適量"
+          },
+          {
+            "name": "黑胡椒",
+            "amount": "適量"
+          },
+          {
+            "name": "巴西里",
+            "amount": "少許",
+            "note": "選用，裝飾"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "蒜頭切片、洋蔥切絲、辣椒切圈、鴻禧菇剝散、培根切小塊。",
+      "平底鍋倒油，先放蒜片再開中火（冷油下蒜比較不會焦），讓每片都沾到油，炒到香味出來。",
+      "加入洋蔥和辣椒，炒到洋蔥半透明。",
+      "加入鴻禧菇炒到微金黃，再加培根炒到香味出來。",
+      "倒入水、牛奶、鮮奶油，撒點黑胡椒，煮到沸騰。",
+      "直接放入乾的義大利麵，用夾子不時翻動，煮到喜歡的口感；醬汁太乾就隨時補一點水。",
+      "加入起司粉，用鹽和黑胡椒做最後調味。",
+      "關火後再加入檸檬汁拌勻，盛盤，可撒巴西里、再擠些檸檬汁。"
+    ],
+    "tips": [
+      "檸檬汁一定要關火後再加，醬汁沸騰時加酸容易結塊（油水分離）。",
+      "一鍋煮的好處：省一鍋煮麵水、麵吸飽醬汁，麵的澱粉也讓醬汁自然變濃稠。",
+      "沒有固定的煮麵時間，邊煮邊試吃，煮到喜歡的口感就好。",
+      "影片推薦搭配白酒。"
+    ],
+    "pending": [
+      "影片中沒清楚拍到起司粉加入的時間點，這裡放在最後調味時加入。"
+    ],
     "addedAt": "2026-09-29",
     "completions": []
   }
