@@ -4,7 +4,7 @@
 所有成就都在 `js/app.js` 的 `compute()` 由資料即時計算，不存檔。
 
 ## 資料
-- `data/recipes.json`：食譜陣列（唯一資料來源）。欄位參考現有的 `tomato-scrambled-eggs`。
+- `data/recipes.json`：食譜陣列（唯一資料來源）。欄位參考現有的食譜（例如 `one-pan-lemon-cream-pasta`）。
   - `techniques` 只能用：煎 炒 煮 燉 烤 蒸 炸 拌 滷 烘焙（技能樹）
   - `seasons`：只有真的是當季料理才填（春/夏/秋/冬），用於四季徽章；不分季節就給 `[]`
   - `difficulty`：1 簡單 / 2 中等 / 3 挑戰
