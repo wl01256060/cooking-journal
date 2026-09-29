@@ -35,3 +35,9 @@ key：累計型用 id（如 `c26`），每年型用 `attendance-2027`、`seasons
 ## 預覽
 `python3 -m http.server 8765` 後開 http://localhost:8765（加 `?demo` 看假資料）。
 改了 css/js 要把 index.html 裡的 `?v=` 版本號加一，避免快取。
+
+## 設計稿（Figma）
+https://www.figma.com/design/Cbe3q3KlHBUpzl3Z12pMJ6/cooking-journal
+- 用 Figma 帳號 selena.na@titansoft.com.sg 連線才有編輯權限
+- 「Screens」頁：4 個頁面 × 3 個斷點（1280 / 768 / 375）；「Components」頁：所有元件、Variables（Color、Radius）、Text/Paint/Effect Styles
+- 使用者改完設計後：用 get_design_context / get_screenshot / get_variable_defs 讀取差異，對應改 `css/style.css`（變數名稱與 CSS `:root` 對應）和 `js/app.js` 的版面，記得調 `index.html` 的 `?v=`
