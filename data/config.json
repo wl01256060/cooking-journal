@@ -1,0 +1,26 @@
+{
+  "startDate": "2026-09-28",
+  "periodDays": 14,
+  "vacationPerYear": 3,
+  "titles": [
+    { "at": 0,   "name": "料理見習生",   "icon": "🌱" },
+    { "at": 26,  "name": "家常廚師",     "icon": "🍳" },
+    { "at": 52,  "name": "拿手料理人",   "icon": "🔥" },
+    { "at": 91,  "name": "料理達人",     "icon": "💎" },
+    { "at": 130, "name": "主廚",         "icon": "👑" }
+  ],
+  "rewards": [
+    { "id": "c1",   "type": "count", "at": 1,   "icon": "🥄", "title": "買一個喜歡的小廚具" },
+    { "id": "c6",   "type": "count", "at": 6,   "icon": "🍰", "title": "吃一次喜歡的甜點店" },
+    { "id": "c13",  "type": "count", "at": 13,  "icon": "🔪", "title": "升級一件好廚具（鍋或刀）" },
+    { "id": "c26",  "type": "count", "at": 26,  "icon": "🍽️", "title": "去吃一次大餐", "major": true },
+    { "id": "c39",  "type": "count", "at": 39,  "icon": "👩‍🍳", "title": "報名一堂實體料理課" },
+    { "id": "c52",  "type": "count", "at": 52,  "icon": "✨", "title": "高級餐廳 / 米其林一次", "major": true },
+    { "id": "c78",  "type": "count", "at": 78,  "icon": "🧳", "title": "美食小旅行" },
+    { "id": "c104", "type": "count", "at": 104, "icon": "🎁", "title": "一套夢想廚具" },
+    { "id": "c130", "type": "count", "at": 130, "icon": "🏆", "title": "美食之旅", "major": true },
+    { "id": "attendance", "type": "attendance", "icon": "🎫", "title": "好餐廳禮券一張", "desc": "整年雙週節奏不中斷（休假券算數）" },
+    { "id": "seasons",    "type": "seasons",    "icon": "🌸", "title": "買一樣好食材或好調味料", "desc": "同一年集滿四季徽章" }
+  ],
+  "claims": {}
+}
