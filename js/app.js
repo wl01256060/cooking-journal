@@ -311,7 +311,8 @@
           <div class="rcard-title"><span>${r.emoji || ''} ${esc(r.name)}</span>${starsHtml(starsFor(n))}</div>
           <div class="rcard-meta">
             <span class="chip violet">${esc(r.category)}</span>
-            <span class="chip">${DIFF[r.difficulty] || ''}</span>
+            ${r.freestyle ? '<span class="chip ok">✍️ 自由料理</span>' : ''}
+            ${DIFF[r.difficulty] ? `<span class="chip">${DIFF[r.difficulty]}</span>` : ''}
             ${matchedIng.slice(0, 2).map((m) => `<span class="chip blue">🥕 ${esc(m)}</span>`).join('')}
           </div>
         </div>
@@ -335,14 +336,16 @@
           ${yt ? `<div class="video" id="video">
               <img src="https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg" alt="">
               <button class="play" id="play" aria-label="播放影片"><span>▶</span></button>
-            </div>` : `<div class="video"><img src="${esc(thumb(r))}" alt=""></div>`}
+            </div>` : thumb(r) ? `<div class="video"><img src="${esc(thumb(r))}" alt="${esc(r.name)}"></div>`
+              : `<div class="video placeholder"><span class="emoji">${r.emoji || '🍽️'}</span></div>`}
         </div>
         <div>
           <div class="eyebrow">${esc(r.category)}</div>
           <h1 class="h1">${r.emoji || ''} ${esc(r.name)}</h1>
           <div class="meta-row">
-            <span class="chip violet">${DIFF[r.difficulty] || ''}</span>
-            <span class="chip">🍽 ${esc(r.servings)}</span>
+            ${r.freestyle ? '<span class="chip ok">✍️ 自由料理</span>' : ''}
+            ${DIFF[r.difficulty] ? `<span class="chip violet">${DIFF[r.difficulty]}</span>` : ''}
+            ${r.servings ? `<span class="chip">🍽 ${esc(r.servings)}</span>` : ''}
             ${r.cost ? `<span class="chip">💰 ${esc(r.cost)}</span>` : ''}
             ${(r.techniques || []).map((x) => `<span class="chip blue">${esc(x)}</span>`).join('')}
             ${(r.seasons || []).map((x) => `<span class="chip">${SEASONS.find((s) => s.key === x)?.icon || ''} ${esc(x)}季</span>`).join('')}
@@ -357,35 +360,7 @@
         </div>
       </div>
 
-      <div class="detail-body">
-        <div class="card">
-          <h2 class="h2">🥕 食材</h2>
-          <p class="hint">點一下打勾，備料時使用</p>
-          ${r.ingredients.map((g, gi) => `
-            <div class="ing-group">
-              <h4>${esc(g.group)}</h4>
-              ${g.items.map((it, ii) => {
-                const k = `${gi}-${ii}`;
-                const on = prog.ing.includes(k);
-                return `<label class="ing${on ? ' checked' : ''}" data-ing="${k}">
-                  <input type="checkbox" ${on ? 'checked' : ''}>
-                  <span class="name">${esc(it.name)}${it.note ? `<small>${esc(it.note)}</small>` : ''}</span>
-                  <span class="amt">${esc(it.amount)}</span></label>`;
-              }).join('')}
-            </div>`).join('')}
-        </div>
-        <div>
-          <div class="card">
-            <h2 class="h2">👩‍🍳 步驟</h2>
-            <p class="hint">點一下步驟標記目前進度</p>
-            <ol class="steps">
-              ${r.steps.map((x, i) => `<li data-step="${i}" class="${i < prog.step ? 'done' : i === prog.step ? 'on' : ''}">${esc(x)}</li>`).join('')}
-            </ol>
-            <div style="margin-top:12px"><button class="btn ghost" id="reset">重新開始</button></div>
-          </div>
-          ${r.tips && r.tips.length ? `<div class="card" style="margin-top:16px"><h2 class="h2">💡 小技巧</h2><ul class="tips">${r.tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
-        </div>
-      </div>
+      ${detailBody(r, prog)}
 
       <section class="section">
         <h2 class="h2">📸 完成紀錄</h2>
@@ -401,6 +376,48 @@
           </div>`).join('')}</div>`
         : '<div class="empty">還沒做過這道菜<br>完成後把照片交給 Claude，就會解鎖圖鑑 ✨</div>'}
       </section>`;
+  }
+
+  function detailBody(r, prog) {
+    const ingCard = r.ingredients.length ? `
+        <div class="card">
+          <h2 class="h2">🥕 食材</h2>
+          <p class="hint">點一下打勾，備料時使用</p>
+          ${r.ingredients.map((g, gi) => `
+            <div class="ing-group">
+              ${g.group ? `<h4>${esc(g.group)}</h4>` : ''}
+              ${g.items.map((it, ii) => {
+                const k = `${gi}-${ii}`;
+                const on = prog.ing.includes(k);
+                return `<label class="ing${on ? ' checked' : ''}" data-ing="${k}">
+                  <input type="checkbox" ${on ? 'checked' : ''}>
+                  <span class="name">${esc(it.name)}${it.note ? `<small>${esc(it.note)}</small>` : ''}</span>
+                  <span class="amt">${esc(it.amount || '')}</span></label>`;
+              }).join('')}
+            </div>`).join('')}
+        </div>` : '';
+    const stepsCard = r.steps.length ? `
+          <div class="card">
+            <h2 class="h2">👩‍🍳 步驟</h2>
+            <p class="hint">點一下步驟標記目前進度</p>
+            <ol class="steps">
+              ${r.steps.map((x, i) => `<li data-step="${i}" class="${i < prog.step ? 'done' : i === prog.step ? 'on' : ''}">${esc(x)}</li>`).join('')}
+            </ol>
+            <div style="margin-top:12px"><button class="btn ghost" id="reset">重新開始</button></div>
+          </div>` : '';
+    const storyCard = r.freestyle ? `
+          <div class="card">
+            <h2 class="h2">✍️ 自由發揮的料理</h2>
+            <p class="muted" style="margin:0">${r.description ? esc(r.description) : '沒有照著食譜，憑感覺做出來的一道菜。'}</p>
+          </div>` : '';
+    const tipsCard = r.tips.length ? `<div class="card"><h2 class="h2">💡 小技巧</h2><ul class="tips">${r.tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
+    const right = [storyCard, stepsCard, tipsCard].filter(Boolean).join('');
+    if (!ingCard && !right) return '';
+    return `
+      <div class="detail-body${ingCard && right ? '' : ' single'}">
+        ${ingCard}
+        ${right ? `<div class="stack">${right}</div>` : ''}
+      </div>`;
   }
 
   function bindRecipe(id) {
@@ -653,7 +670,10 @@
     fetch('data/recipes.json', { cache: 'no-cache' }).then((r) => r.json()),
     fetch('data/config.json', { cache: 'no-cache' }).then((r) => r.json()),
   ]).then(([rs, cfg]) => {
-    recipes = rs.map((r) => ({ ...r, completions: [...(r.completions || [])].sort((a, b) => a.date.localeCompare(b.date)) }));
+    recipes = rs.map((r) => ({
+      ingredients: [], steps: [], tips: [], techniques: [], seasons: [], ...r,
+      completions: [...(r.completions || [])].sort((a, b) => a.date.localeCompare(b.date)),
+    }));
     config = cfg;
     if (isDemo) makeDemo();
     S = compute();

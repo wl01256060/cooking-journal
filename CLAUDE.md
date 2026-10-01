@@ -28,6 +28,13 @@
 （自動壓縮、支援 HEIC）。完成後告訴使用者：累計次數、熟練度、有沒有解鎖新獎勵／徽章／稱號、離下一個獎勵還差幾道。
 然後 commit + push。
 
+### 沒有食譜的料理（自由料理）
+使用者做了沒有食譜的菜也可以上傳。recipe_id 不存在時加 `--name` 會自動建立 `freestyle: true` 的食譜再標記完成：
+`python3 tools/complete.py <新id> <照片> --name 料理名 --emoji 🍳 --category 家常菜 --techniques 炒 [--ingredients 白飯,雞蛋] [--seasons 秋] [--difficulty 1] [--description 一句話]`
+- 看照片和使用者描述推測 emoji、分類、技法、食材；不確定的就不填
+- 同一道自由料理再做一次，用同一個 id 呼叫（不用再加 --name）
+- 自由料理一樣算完成次數、圖鑑、技能樹、徽章；網頁上有「✍️ 自由料理」標籤，沒有影片/步驟的區塊會自動隱藏
+
 ## 3. 兌現獎勵
 在 `config.json` 的 `claims` 加上 `"<reward key>": { "date": "YYYY-MM-DD" }`。
 key：累計型用 id（如 `c26`），每年型用 `attendance-2027`、`seasons-2027`。

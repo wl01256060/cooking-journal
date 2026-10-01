@@ -348,3 +348,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ing-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
 .ing-cloud .chip { font-size: 14px; padding: 6px 12px; }
 .ing-cloud .chip b { color: var(--violet); margin-left: 2px; }
+
+/* ---------- Freestyle（沒有食譜的料理） ---------- */
+.video.placeholder { background: var(--grad-soft); box-shadow: var(--shadow); display: grid; place-items: center; }
+.video.placeholder .emoji { font-size: 88px; }
+.detail-body.single { grid-template-columns: 1fr; }
+.stack { display: grid; gap: 16px; align-content: start; }
