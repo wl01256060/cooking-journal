@@ -7,7 +7,7 @@
   'use strict';
 
   const DAY = 86400000;
-  const MASTERY = [1, 3, 5];
+  const MASTERY = [1, 2, 3]; // 每完成一次加一顆星，最多 3 顆
   const SEASONS = [
     { key: '春', icon: '🌸', months: [3, 4, 5] },
     { key: '夏', icon: '🍉', months: [6, 7, 8] },
@@ -162,7 +162,7 @@
       { icon: '📘', name: '圖鑑 25', desc: '完成 25 道不同料理', v: distinct, g: 25 },
       { icon: '📙', name: '圖鑑 50', desc: '完成 50 道不同料理', v: distinct, g: 50 },
       { icon: '📚', name: '圖鑑 100', desc: '完成 100 道不同料理', v: distinct, g: 100 },
-      { icon: '⭐', name: '拿手菜', desc: '一道菜達到 ★★★（做 5 次）', v: star3, g: 1 },
+      { icon: '⭐', name: '拿手菜', desc: '一道菜達到 ★★★（做 3 次）', v: star3, g: 1 },
       { icon: '🌟', name: '招牌三寶', desc: '三道菜達到 ★★★', v: star3, g: 3 },
       { icon: '🧭', name: '技法探索', desc: '點亮 5 種烹調技法', v: techLit, g: 5 },
       { icon: '🗺️', name: '全技法', desc: `點亮全部 ${TECHNIQUES.length} 種技法`, v: techLit, g: TECHNIQUES.length },
@@ -333,7 +333,7 @@
           </div>
           <div class="mastery">
             <div class="mastery-top"><span>熟練度 ${starsHtml(st)}</span><span class="num">完成 ${n} 次</span></div>
-            <div class="bar"><span style="width:${nextAt ? pct(n, nextAt) : 100}%"></span></div>
+            <div class="bar"><span style="width:${pct(Math.min(n, MASTERY[2]), MASTERY[2])}%"></span></div>
             <div class="muted" style="font-size:13px;margin-top:6px">${nextAt ? `再做 ${nextAt - n} 次升到 ${'★'.repeat(st + 1)}` : '已經是拿手菜了！'}</div>
           </div>
           ${last && last.improve ? `<div class="improve-note">📝 <b>上次想改進：</b>${esc(last.improve)}</div>` : ''}
