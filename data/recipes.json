@@ -425,7 +425,13 @@
       "沒有鮭魚可以改用雞腿肉，一樣先醃過、雞皮煎到酥脆再煮。"
     ],
     "addedAt": "2026-09-29",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-02",
+        "photo": "images/salmon-curry-cream-20261002.jpg",
+        "improve": "鮭魚不要切太小塊，容易碎掉"
+      }
+    ]
   },
   {
     "id": "yogurt-garlic-potato-salad",
