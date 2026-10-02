@@ -40,10 +40,6 @@
   const fmtFull = (s) => { const d = parseDate(s); return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`; };
   const seasonOf = (d) => SEASONS.find((s) => s.months.includes(d.getMonth() + 1));
   const pct = (v, goal) => Math.max(0, Math.min(100, (v / goal) * 100));
-  const store = {
-    get(k, fb) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch { return fb; } },
-    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* ignore */ } },
-  };
   const starsFor = (n) => (n >= MASTERY[2] ? 3 : n >= MASTERY[1] ? 2 : n >= MASTERY[0] ? 1 : 0);
   const starsHtml = (n) => `<span class="stars" aria-label="熟練度 ${n} 星">${'★'.repeat(n)}<span class="off">${'★'.repeat(3 - n)}</span></span>`;
   const thumb = (r) => {
@@ -304,10 +300,7 @@
     const r = recipes.find((x) => x.id === id);
     if (!r) return `<a class="back" href="#/">← 返回</a><div class="empty">找不到這道料理</div>`;
     const n = r.completions.length;
-    const st = starsFor(n);
-    const nextAt = MASTERY.find((m) => n < m);
     const last = r.completions[n - 1];
-    const prog = store.get(`prog:${r.id}`, { ing: [], step: -1 });
     const yt = r.video && r.video.youtubeId;
 
     return `
@@ -322,29 +315,27 @@
         </div>
         <div>
           <div class="eyebrow">${esc(r.category)}</div>
-          <h1 class="h1">${r.emoji || ''} ${esc(r.name)}</h1>
+          <h1 class="h1">${esc(r.name)}</h1>
           <div class="meta-row">
-            ${r.freestyle ? '<span class="chip ok">自由料理</span>' : ''}
-            ${DIFF[r.difficulty] ? `<span class="chip violet">${DIFF[r.difficulty]}</span>` : ''}
-            ${r.servings ? `<span class="chip">${esc(r.servings)}</span>` : ''}
-            ${r.cost ? `<span class="chip">${esc(r.cost)}</span>` : ''}
-            ${(r.techniques || []).map((x) => `<span class="chip blue">${esc(x)}</span>`).join('')}
-            ${(r.seasons || []).map((x) => `<span class="chip">${esc(x)}季</span>`).join('')}
-          </div>
-          <div class="mastery">
-            <div class="mastery-top"><span>熟練度 ${starsHtml(st)}</span><span class="num">完成 ${n} 次</span></div>
-            <div class="bar"><span style="width:${pct(Math.min(n, MASTERY[2]), MASTERY[2])}%"></span></div>
-            <div class="muted" style="font-size:13px;margin-top:6px">${nextAt ? `再做 ${nextAt - n} 次升到 ${'★'.repeat(st + 1)}` : '已經是拿手菜了！'}</div>
+            <div class="meta-chips">
+              ${r.freestyle ? '<span class="chip ok">自由料理</span>' : ''}
+              ${DIFF[r.difficulty] ? `<span class="chip">${DIFF[r.difficulty]}</span>` : ''}
+              ${r.servings ? `<span class="chip">${esc(r.servings)}</span>` : ''}
+              ${r.cost ? `<span class="chip">${esc(r.cost)}</span>` : ''}
+              ${(r.techniques || []).map((x) => `<span class="chip blue">${esc(x)}</span>`).join('')}
+              ${(r.seasons || []).map((x) => `<span class="chip">${esc(x)}季</span>`).join('')}
+            </div>
+            <div class="mastery" title="完成 ${n} 次">熟練度 ${starsHtml(starsFor(n))}</div>
           </div>
           ${last && last.improve ? `<div class="improve-note">📝 <b>上次想改進：</b>${esc(last.improve)}</div>` : ''}
           ${r.video ? `<div class="source">來源：<a href="${esc(r.video.url)}" target="_blank" rel="noopener">${esc(r.video.channel)} ↗</a></div>` : ''}
         </div>
       </div>
 
-      ${detailBody(r, prog)}
+      ${detailBody(r)}
 
       <section class="section">
-        <h2 class="h2">📸 完成紀錄</h2>
+        <h2 class="h2">完成紀錄</h2>
         ${n ? `<div class="history">${[...r.completions].reverse().map((c) => `
           <div class="hist">
             ${c.photo ? `<img src="${esc(c.photo)}" alt="${esc(r.name)} ${esc(c.date)}" loading="lazy">` : ''}
@@ -359,39 +350,31 @@
       </section>`;
   }
 
-  function detailBody(r, prog) {
+  function detailBody(r) {
     const ingCard = r.ingredients.length ? `
         <div class="card">
-          <h2 class="h2">🥕 食材</h2>
-          <p class="hint">點一下打勾，備料時使用</p>
-          ${r.ingredients.map((g, gi) => `
+          <h2 class="h2">食材</h2>
+          ${r.ingredients.map((g) => `
             <div class="ing-group">
               ${g.group ? `<h4>${esc(g.group)}</h4>` : ''}
-              ${g.items.map((it, ii) => {
-                const k = `${gi}-${ii}`;
-                const on = prog.ing.includes(k);
-                return `<label class="ing${on ? ' checked' : ''}" data-ing="${k}">
-                  <input type="checkbox" ${on ? 'checked' : ''}>
+              ${g.items.map((it) => `
+                <div class="ing">
                   <span class="name">${esc(it.name)}${it.note ? `<small>${esc(it.note)}</small>` : ''}</span>
-                  <span class="amt">${esc(it.amount || '')}</span></label>`;
-              }).join('')}
+                  <span class="amt">${esc(it.amount || '')}</span>
+                </div>`).join('')}
             </div>`).join('')}
         </div>` : '';
     const stepsCard = r.steps.length ? `
           <div class="card">
-            <h2 class="h2">👩‍🍳 步驟</h2>
-            <p class="hint">點一下步驟標記目前進度</p>
-            <ol class="steps">
-              ${r.steps.map((x, i) => `<li data-step="${i}" class="${i < prog.step ? 'done' : i === prog.step ? 'on' : ''}">${esc(x)}</li>`).join('')}
-            </ol>
-            <div style="margin-top:12px"><button class="btn ghost" id="reset">重新開始</button></div>
+            <h2 class="h2">步驟</h2>
+            <ol class="steps">${r.steps.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>
           </div>` : '';
     const storyCard = r.freestyle ? `
           <div class="card">
-            <h2 class="h2">✍️ 自由發揮的料理</h2>
+            <h2 class="h2">自由發揮的料理</h2>
             <p class="muted" style="margin:0">${r.description ? esc(r.description) : '沒有照著食譜，憑感覺做出來的一道菜。'}</p>
           </div>` : '';
-    const tipsCard = r.tips.length ? `<div class="card"><h2 class="h2">💡 小技巧</h2><ul class="tips">${r.tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
+    const tipsCard = r.tips.length ? `<div class="card tips-card"><h2 class="h2">小技巧</h2><ul class="tips">${r.tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
     const right = [storyCard, stepsCard, tipsCard].filter(Boolean).join('');
     if (!ingCard && !right) return '';
     return `
@@ -402,35 +385,12 @@
   }
 
   function bindRecipe(id) {
-    const key = `prog:${id}`;
-    const prog = store.get(key, { ing: [], step: -1 });
     const play = document.getElementById('play');
     const r = recipes.find((x) => x.id === id);
     if (play && r) play.onclick = () => {
       document.getElementById('video').innerHTML =
         `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(r.video.youtubeId)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="${esc(r.video.title)}"></iframe>`;
     };
-    app.querySelectorAll('.ing').forEach((el) => {
-      el.querySelector('input').onchange = (e) => {
-        const k = el.dataset.ing;
-        prog.ing = e.target.checked ? [...new Set([...prog.ing, k])] : prog.ing.filter((x) => x !== k);
-        el.classList.toggle('checked', e.target.checked);
-        store.set(key, prog);
-      };
-    });
-    app.querySelectorAll('.steps li').forEach((el) => {
-      el.onclick = () => {
-        const i = +el.dataset.step;
-        prog.step = prog.step === i ? i + 1 : i;
-        app.querySelectorAll('.steps li').forEach((li) => {
-          const j = +li.dataset.step;
-          li.className = j < prog.step ? 'done' : j === prog.step ? 'on' : '';
-        });
-        store.set(key, prog);
-      };
-    });
-    const reset = document.getElementById('reset');
-    if (reset) reset.onclick = () => { store.set(key, { ing: [], step: -1 }); render(); };
   }
 
   function viewAchievements() {
