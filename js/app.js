@@ -195,74 +195,52 @@
     const nextTitle = config.titles[s.titleIdx + 1];
     const nr = s.nextReward;
     const nrPct = nr ? pct(s.total - s.prevAt, nr.at - s.prevAt) : 100;
-    const cp = s.curPeriod;
-    const daysLeft = cp ? daysBetween(s.t, cp.e) + 1 : 0;
-    const yr = s.t.getFullYear();
-    const seasonSet = s.seasonsByYear[yr] || new Set();
-    const nowSeason = seasonOf(s.t);
-    const recent = s.periods.filter((p) => p.i <= s.cur).slice(-10);
-
-    let rhythmBig, rhythmSub;
-    if (!cp) { rhythmBig = '即將開始'; rhythmSub = `${fmtFull(config.startDate)} 起算`; }
-    else if (cp.status === 'done') { rhythmBig = '本期完成 ✓'; rhythmSub = `下一期 ${fmt(addDays(cp.e, 1))} 開始`; }
-    else { rhythmBig = `剩 ${daysLeft} 天`; rhythmSub = `本期 ${fmt(cp.s)}–${fmt(cp.e)}，做一道就達成`; }
-
     const cats = [...new Set(recipes.map((r) => r.category))].sort();
+    const STATUS = [['all', '全部'], ['todo', '未完成'], ['done', '已完成']];
 
     return `
       ${demoBanner()}
       <section class="bento">
         <div class="card hero">
           <div>
-            <div class="eyebrow">目前稱號</div>
             <div class="hero-title">${title.icon} ${esc(title.name)}</div>
-            <div class="hero-count"><b class="num">${s.total}</b> 次完成 · <span class="num">${s.distinct}</span> 道不同料理${nextTitle ? ` · 再 ${nextTitle.at - s.total} 次晉升「${esc(nextTitle.name)}」` : ''}</div>
+            <div class="hero-count"><span class="num">${s.total}</span> 次完成 · <span class="num">${s.distinct}</span> 道不同料理${nextTitle ? ` · 再 ${nextTitle.at - s.total} 次晉升「${esc(nextTitle.name)}」` : ''}</div>
           </div>
           <div class="hero-next">
             ${nr ? `
-              <div class="hero-next-row"><span>下一個獎勵</span><span class="num">${s.total} / ${nr.at}</span></div>
-              <div class="hero-next-row"><strong>${nr.icon} ${esc(nr.title)}</strong><span>還差 <b class="num">${nr.at - s.total}</b> 道</span></div>
-              <div class="bar"><span style="width:${nrPct}%"></span></div>` : '<div class="hero-next-row"><strong>🏆 所有里程碑都達成了！</strong></div>'}
+              <div class="hero-next-row"><span>${nr.icon} ${esc(nr.title)}</span><small>還差 <span class="num">${nr.at - s.total}</span> 道</small></div>
+              <div class="bar"><span style="width:${nrPct}%"></span></div>` : '<div class="hero-next-row"><span>🏆 所有里程碑都達成了！</span></div>'}
           </div>
         </div>
         <div class="card stat-card">
-          <div class="eyebrow">雙週節奏</div>
-          <div class="big">${rhythmBig}</div>
-          <div class="sub">${rhythmSub}</div>
-          <div class="period-dots">${recent.map((p) => `<i class="dot ${p.status}${p.isCur ? ' current' : ''}" title="${fmt(p.s)}–${fmt(p.e)}"></i>`).join('')}</div>
+          <div class="eyebrow">料理圖鑑</div>
+          <div>
+            <div class="big num">${s.distinct} / ${recipes.length}</div>
+            <div class="bar"><span style="width:${pct(s.distinct, recipes.length || 1)}%"></span></div>
+            <div class="sub">食材圖鑑 ${Object.keys(s.ingMap).length} 種</div>
+          </div>
         </div>
         <div class="card stat-card">
           <div class="eyebrow">連續節奏</div>
-          <div class="big num">${s.streak}<small>期</small></div>
-          <div class="sub">最佳 ${s.best} 期 · 今年休假券剩 ${Math.max(0, s.vacLeft)} 張 🏖️</div>
-        </div>
-        <div class="card stat-card">
-          <div class="eyebrow">料理圖鑑</div>
-          <div class="big num">${s.distinct}<small>/ ${recipes.length}</small></div>
-          <div class="bar"><span style="width:${pct(s.distinct, recipes.length || 1)}%"></span></div>
-          <div class="sub">食材圖鑑 ${Object.keys(s.ingMap).length} 種</div>
-        </div>
-        <div class="card stat-card">
-          <div class="eyebrow">${yr} 四季徽章</div>
-          <div class="season-row">${SEASONS.map((x) => `<span class="season${seasonSet.has(x.key) ? ' on' : ''}${x === nowSeason ? ' now' : ''}" title="${x.key}">${x.icon}</span>`).join('')}</div>
-          <div class="sub">現在是${nowSeason.key}季，做一道標有「${nowSeason.key}」的當季料理</div>
+          <div>
+            <div class="big num">${s.streak} 期</div>
+            <div class="sub">最佳 ${s.best} 期 · 今年休假券剩 ${Math.max(0, s.vacLeft)} 張</div>
+          </div>
         </div>
       </section>
-      ${s.pendingRewards.map((r) => `
-        <a class="reward-alert" href="#/achievements">
-          <span class="ico">${r.icon}</span>
-          <span><b>獎勵待兌現：${esc(r.title)}${r.year ? `（${r.year}）` : ''}</b><span class="muted">去享受吧！兌現後告訴 Claude 幫你標記 ✓</span></span>
-        </a>`).join('')}
 
       <section class="section">
-        <h2 class="h2">📖 食譜</h2>
+        <h2 class="h2">食譜</h2>
         <div class="toolbar">
           <label class="search"><span aria-hidden="true">🔍</span>
             <input id="q" type="search" placeholder="搜尋料理名稱或食材，例如：雞蛋" value="${esc(ui.q)}" autocomplete="off">
           </label>
           <div class="seg" role="group" aria-label="完成狀態">
-            ${[['all', '全部'], ['todo', '未完成'], ['done', '已完成']].map(([k, l]) => `<button data-status="${k}" class="${ui.status === k ? 'on' : ''}">${l}</button>`).join('')}
+            ${STATUS.map(([k, l]) => `<button data-status="${k}" class="${ui.status === k ? 'on' : ''}">${l}</button>`).join('')}
           </div>
+          <select class="select status-select" id="status" aria-label="完成狀態">
+            ${STATUS.map(([k, l]) => `<option value="${k}" ${ui.status === k ? 'selected' : ''}>${k === 'all' ? '所有進度' : l}</option>`).join('')}
+          </select>
           <select class="select" id="cat" aria-label="分類">
             <option value="">所有分類</option>
             ${cats.map((c) => `<option ${ui.category === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}
@@ -300,20 +278,20 @@
   function cardHtml(r) {
     const n = r.completions.length;
     const img = thumb(r);
-    const matchedIng = ui.q.trim() ? allIngredients(r).filter((i) => ui.q.trim().split(/\s+/).some((w) => i.name.toLowerCase().includes(w.toLowerCase()))).map((i) => i.name) : [];
     return `
       <a class="rcard${n ? '' : ' locked'}" href="#/r/${encodeURIComponent(r.id)}">
         <div class="rcard-img">
           ${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : `<span class="emoji">${r.emoji || '🍽️'}</span>`}
-          <span class="badge ${n ? 'done' : ''}">${n ? `✓ 完成 ${n} 次` : '想做'}</span>
+          <div class="rcard-tags">
+            <span class="chip">${esc(r.category)}</span>
+            ${r.freestyle ? '<span class="chip">✍️ 自由料理</span>' : ''}
+          </div>
         </div>
         <div class="rcard-body">
-          <div class="rcard-title"><span>${r.emoji || ''} ${esc(r.name)}</span>${starsHtml(starsFor(n))}</div>
+          <div class="rcard-title">${esc(r.name)}</div>
           <div class="rcard-meta">
-            <span class="chip violet">${esc(r.category)}</span>
-            ${r.freestyle ? '<span class="chip ok">✍️ 自由料理</span>' : ''}
+            ${starsHtml(starsFor(n))}
             ${DIFF[r.difficulty] ? `<span class="chip">${DIFF[r.difficulty]}</span>` : ''}
-            ${matchedIng.slice(0, 2).map((m) => `<span class="chip blue">🥕 ${esc(m)}</span>`).join('')}
           </div>
         </div>
       </a>`;
@@ -595,13 +573,13 @@
       app.innerHTML = viewRecipe(decodeURIComponent(arg || ''));
       bindRecipe(decodeURIComponent(arg || ''));
       const r = recipes.find((x) => x.id === decodeURIComponent(arg || ''));
-      document.title = r ? `${r.name}｜料理人之路` : '料理人之路';
+      document.title = r ? `${r.name}｜料理紀錄` : '料理紀錄';
     } else if (route === 'achievements') {
-      app.innerHTML = viewAchievements(); document.title = '成就｜料理人之路';
+      app.innerHTML = viewAchievements(); document.title = '成就｜料理紀錄';
     } else if (route === 'collection') {
-      app.innerHTML = viewCollection(); document.title = '收藏｜料理人之路';
+      app.innerHTML = viewCollection(); document.title = '收藏｜料理紀錄';
     } else {
-      app.innerHTML = viewHome(); document.title = '料理人之路';
+      app.innerHTML = viewHome(); document.title = '料理紀錄';
       bindHome();
     }
   }
@@ -614,9 +592,15 @@
       b.onclick = () => {
         ui.status = b.dataset.status;
         app.querySelectorAll('[data-status]').forEach((x) => x.classList.toggle('on', x === b));
+        document.getElementById('status').value = ui.status;
         renderList();
       };
     });
+    document.getElementById('status').onchange = (e) => {
+      ui.status = e.target.value;
+      app.querySelectorAll('[data-status]').forEach((x) => x.classList.toggle('on', x.dataset.status === ui.status));
+      renderList();
+    };
     document.getElementById('cat').onchange = (e) => { ui.category = e.target.value; renderList(); };
     document.getElementById('diff').onchange = (e) => { ui.difficulty = e.target.value; renderList(); };
   }

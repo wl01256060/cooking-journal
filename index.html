@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>料理人之路</title>
+  <title>料理紀錄</title>
   <meta name="description" content="我的料理學習紀錄：食譜、完成紀錄與成就">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#/">
-        <span class="brand-mark">🍳</span>
-        <span class="brand-text">料理人之路</span>
+        <svg class="brand-mark" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+          <defs><linearGradient id="brandGrad" x1="2.7" y1="2.2" x2="24.3" y2="22.7" gradientUnits="userSpaceOnUse"><stop stop-color="#8B5CF6"/><stop offset=".45" stop-color="#6366F1"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs>
+          <path fill="url(#brandGrad)" d="M11.6054 14.8552C11.813 14.6476 11.9168 14.3903 11.9168 14.0833V10.8333C11.9168 10.5264 11.813 10.2691 11.6054 10.0615C11.3977 9.85382 11.1404 9.75 10.8335 9.75C10.5266 9.75 10.2693 9.85382 10.0616 10.0615C9.85398 10.2691 9.75016 10.5264 9.75016 10.8333V14.0833C9.75016 14.3903 9.85398 14.6476 10.0616 14.8552C10.2693 15.0628 10.5266 15.1667 10.8335 15.1667C11.1404 15.1667 11.3977 15.0628 11.6054 14.8552ZM5.41683 17.3333V13.5417C4.58627 13.1264 3.92725 12.526 3.43975 11.7406C2.95225 10.9552 2.7085 10.1021 2.7085 9.18125C2.7085 7.82708 3.17343 6.68055 4.10329 5.74166C5.03315 4.80278 6.17516 4.33333 7.52933 4.33333C7.746 4.33333 7.96718 4.35139 8.19287 4.3875C8.41857 4.42361 8.63975 4.46875 8.85641 4.52291C9.3078 3.78264 9.89461 3.20486 10.6168 2.78958C11.3391 2.3743 12.1335 2.16666 13.0002 2.16666C13.8668 2.16666 14.6613 2.3743 15.3835 2.78958C16.1057 3.20486 16.6925 3.78264 17.1439 4.52291C17.3606 4.46875 17.5772 4.42361 17.7939 4.3875C18.0106 4.35139 18.2363 4.33333 18.471 4.33333C19.8252 4.33333 20.9672 4.80278 21.897 5.74166C22.8269 6.68055 23.2918 7.82708 23.2918 9.18125C23.2918 10.1021 23.0481 10.9552 22.5606 11.7406C22.0731 12.526 21.4141 13.1264 20.5835 13.5417V17.3333H5.41683ZM15.9387 14.8552C16.1463 14.6476 16.2502 14.3903 16.2502 14.0833V10.8333C16.2502 10.5264 16.1463 10.2691 15.9387 10.0615C15.7311 9.85382 15.4738 9.75 15.1668 9.75C14.8599 9.75 14.6026 9.85382 14.395 10.0615C14.1873 10.2691 14.0835 10.5264 14.0835 10.8333V14.0833C14.0835 14.3903 14.1873 14.6476 14.395 14.8552C14.6026 15.0628 14.8599 15.1667 15.1668 15.1667C15.4738 15.1667 15.7311 15.0628 15.9387 14.8552ZM7.5835 23.8333C6.98766 23.8333 6.47759 23.6212 6.05329 23.1969C5.62898 22.7726 5.41683 22.2625 5.41683 21.6667V19.5H20.5835V21.6667C20.5835 22.2625 20.3713 22.7726 19.947 23.1969C19.5227 23.6212 19.0127 23.8333 18.4168 23.8333H7.5835Z"/>
+        </svg>
+        <span class="brand-text">料理紀錄</span>
       </a>
       <nav class="nav" aria-label="主要導覽">
-        <a href="#/" data-nav="home"><span class="nav-ico">📖</span><span>食譜</span></a>
-        <a href="#/achievements" data-nav="achievements"><span class="nav-ico">🏅</span><span>成就</span></a>
-        <a href="#/collection" data-nav="collection"><span class="nav-ico">🗂️</span><span>收藏</span></a>
+        <a href="#/" data-nav="home"><span>食譜</span></a>
+        <a href="#/achievements" data-nav="achievements"><span>成就</span></a>
+        <a href="#/collection" data-nav="collection"><span>收藏</span></a>
       </nav>
     </div>
   </header>
@@ -31,8 +34,6 @@
     <div class="loading">載入中…</div>
   </main>
 
-  <footer class="footer">每兩週一道菜，慢慢成為主廚 🍳</footer>
-
-  <script src="js/app.js?v=5"></script>
+  <script src="js/app.js?v=6"></script>
 </body>
 </html>
