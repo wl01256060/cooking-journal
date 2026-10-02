@@ -45,9 +45,13 @@
   const thumb = (r) => {
     const last = r.completions[r.completions.length - 1];
     if (last && last.photo) return last.photo;
-    if (r.video && r.video.youtubeId) return `https://i.ytimg.com/vi/${r.video.youtubeId}/hqdefault.jpg`;
+    if (r.video && r.video.youtubeId) return ytThumb(r.video.youtubeId);
     return '';
   };
+  // YouTube 縮圖：hq720 是 16:9、沒有上下黑邊。少數影片沒有 hq720，YouTube 會回 120×90 的灰色佔位圖（不會觸發 onerror），
+  // 所以載入後寬度太小也要改用同為 16:9 的 mqdefault
+  const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hq720.jpg`;
+  const THUMB_FALLBACK = `onload="if(this.naturalWidth<200&&this.src.includes('/hq720.jpg'))this.src=this.src.replace('/hq720.jpg','/mqdefault.jpg')" onerror="this.onerror=null;this.src=this.src.replace('/hq720.jpg','/mqdefault.jpg')"`;
   const allIngredients = (r) => r.ingredients.flatMap((g) => g.items);
 
   /* ---------- stats ---------- */
@@ -279,7 +283,7 @@
     return `
       <a class="rcard${n ? '' : ' locked'}" href="#/r/${encodeURIComponent(r.id)}">
         <div class="rcard-img">
-          ${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : `<span class="emoji">${r.emoji || '🍽️'}</span>`}
+          ${img ? `<img src="${esc(img)}" alt="" loading="lazy" ${THUMB_FALLBACK}>` : `<span class="emoji">${r.emoji || '🍽️'}</span>`}
           <div class="rcard-tags">
             <span class="chip">${esc(r.category)}</span>
             ${r.freestyle ? '<span class="chip">自由料理</span>' : ''}
@@ -308,9 +312,9 @@
       <div class="detail-head">
         <div>
           ${yt ? `<div class="video" id="video">
-              <img src="https://i.ytimg.com/vi/${esc(yt)}/hqdefault.jpg" alt="">
+              <img src="${ytThumb(esc(yt))}" alt="" ${THUMB_FALLBACK}>
               <button class="play" id="play" aria-label="播放影片"><span>▶</span></button>
-            </div>` : thumb(r) ? `<div class="video"><img src="${esc(thumb(r))}" alt="${esc(r.name)}"></div>`
+            </div>` : thumb(r) ? `<div class="video"><img src="${esc(thumb(r))}" alt="${esc(r.name)}" ${THUMB_FALLBACK}></div>`
               : `<div class="video placeholder"><span class="emoji">${r.emoji || '🍽️'}</span></div>`}
         </div>
         <div>

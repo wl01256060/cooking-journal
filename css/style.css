@@ -191,7 +191,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .rcard { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: #fff;
   border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
 .rcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.rcard-img { position: relative; aspect-ratio: 4 / 3; background: var(--grad-soft); overflow: hidden; }
+.rcard-img { position: relative; aspect-ratio: 16 / 9; background: var(--grad-soft); overflow: hidden; }
 .rcard-img img { width: 100%; height: 100%; object-fit: cover; }
 .rcard.locked .rcard-img img { filter: grayscale(.85) contrast(.9) brightness(1.05); opacity: .75; }
 .rcard-tags { position: absolute; left: 10px; top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
