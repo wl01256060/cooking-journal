@@ -28,7 +28,8 @@
   let recipes = [];
   let config = {};
   let S = null; // computed stats
-  const ui = { q: '', status: 'all', category: '', difficulty: '' };
+  const ui = { q: '', status: 'all', category: '', difficulty: '', page: 1 };
+  const PAGE_SIZE = 20;
 
   /* ---------- utils ---------- */
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -270,9 +271,38 @@
     });
     // 未完成的排前面（想做清單），同狀態依加入時間新到舊
     list.sort((a, b) => (a.completions.length > 0) - (b.completions.length > 0) || String(b.addedAt).localeCompare(String(a.addedAt)));
+    const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+    ui.page = Math.min(Math.max(1, ui.page), pages);
+    const shown = list.slice((ui.page - 1) * PAGE_SIZE, ui.page * PAGE_SIZE);
     el.innerHTML = `
-      <div class="result-count">共 ${list.length} 道</div>
-      ${list.length ? `<div class="grid">${list.map(cardHtml).join('')}</div>` : '<div class="empty">找不到符合的料理 🥲<br>換個關鍵字試試</div>'}`;
+      <div class="result-count">共 ${list.length} 道${pages > 1 ? ` · 第 ${ui.page} / ${pages} 頁` : ''}</div>
+      ${list.length ? `<div class="grid">${shown.map(cardHtml).join('')}</div>` : '<div class="empty">找不到符合的料理 🥲<br>換個關鍵字試試</div>'}
+      ${pagerHtml(ui.page, pages)}`;
+    el.querySelectorAll('[data-page]').forEach((b) => {
+      b.onclick = () => {
+        ui.page = +b.dataset.page;
+        renderList();
+        const top = document.querySelector('.toolbar').getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      };
+    });
+  }
+
+  // 頁碼：頁數多時只顯示第一頁、最後一頁和目前頁的前後一頁，其餘用 … 代替
+  function pagerHtml(cur, pages) {
+    if (pages <= 1) return '';
+    const nums = [...new Set([1, cur - 1, cur, cur + 1, pages])].filter((n) => n >= 1 && n <= pages).sort((a, b) => a - b);
+    const items = [];
+    nums.forEach((n, i) => {
+      if (i && n - nums[i - 1] > 1) items.push('<span class="pager-gap">…</span>');
+      items.push(`<button class="pager-btn${n === cur ? ' on' : ''}" data-page="${n}" ${n === cur ? 'aria-current="page"' : ''}>${n}</button>`);
+    });
+    return `
+      <nav class="pager" aria-label="分頁">
+        <button class="pager-btn" data-page="${cur - 1}" ${cur === 1 ? 'disabled' : ''} aria-label="上一頁">‹</button>
+        ${items.join('')}
+        <button class="pager-btn" data-page="${cur + 1}" ${cur === pages ? 'disabled' : ''} aria-label="下一頁">›</button>
+      </nav>`;
   }
 
   function cardHtml(r) {
@@ -554,22 +584,24 @@
   function bindHome() {
     renderList();
     const q = document.getElementById('q');
-    q.oninput = () => { ui.q = q.value; renderList(); };
+    q.oninput = () => { ui.q = q.value; ui.page = 1; renderList(); };
     app.querySelectorAll('[data-status]').forEach((b) => {
       b.onclick = () => {
         ui.status = b.dataset.status;
         app.querySelectorAll('[data-status]').forEach((x) => x.classList.toggle('on', x === b));
         document.getElementById('status').value = ui.status;
+        ui.page = 1;
         renderList();
       };
     });
     document.getElementById('status').onchange = (e) => {
       ui.status = e.target.value;
       app.querySelectorAll('[data-status]').forEach((x) => x.classList.toggle('on', x.dataset.status === ui.status));
+      ui.page = 1;
       renderList();
     };
-    document.getElementById('cat').onchange = (e) => { ui.category = e.target.value; renderList(); };
-    document.getElementById('diff').onchange = (e) => { ui.difficulty = e.target.value; renderList(); };
+    document.getElementById('cat').onchange = (e) => { ui.category = e.target.value; ui.page = 1; renderList(); };
+    document.getElementById('diff').onchange = (e) => { ui.difficulty = e.target.value; ui.page = 1; renderList(); };
   }
 
   let lastRoute = '';

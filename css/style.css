@@ -208,6 +208,15 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .rcard-img .emoji { font-size: 44px; }
 
 }
+.pager { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 24px; flex-wrap: wrap; }
+.pager-btn {
+  min-width: 40px; height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-2); font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums;
+}
+.pager-btn:hover:not(:disabled):not(.on) { color: var(--ink); background: #fff; }
+.pager-btn.on { background: var(--violet-soft); color: var(--violet); border-color: transparent; }
+.pager-btn:disabled { opacity: .4; cursor: default; }
+.pager-gap { color: var(--muted); padding: 0 2px; }
 .empty { text-align: center; padding: 48px 16px; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
 
 /* ---------- Recipe detail ---------- */
