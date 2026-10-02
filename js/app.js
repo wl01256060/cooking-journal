@@ -286,12 +286,12 @@
           ${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : `<span class="emoji">${r.emoji || '🍽️'}</span>`}
           <div class="rcard-tags">
             <span class="chip">${esc(r.category)}</span>
-            ${r.freestyle ? '<span class="chip">✍️ 自由料理</span>' : ''}
+            ${r.freestyle ? '<span class="chip">自由料理</span>' : ''}
           </div>
         </div>
         <div class="rcard-body">
           <div class="rcard-title">${esc(r.name)}</div>
-          ${matched.length ? `<div class="rcard-match">${matched.slice(0, 3).map((m) => `<span class="chip blue">🥕 ${esc(m)}</span>`).join('')}</div>` : ''}
+          ${matched.length ? `<div class="rcard-match">${matched.slice(0, 3).map((m) => `<span class="chip blue">${esc(m)}</span>`).join('')}</div>` : ''}
           <div class="rcard-meta">
             ${starsHtml(starsFor(n))}
             ${DIFF[r.difficulty] ? `<span class="chip">${DIFF[r.difficulty]}</span>` : ''}
@@ -324,12 +324,12 @@
           <div class="eyebrow">${esc(r.category)}</div>
           <h1 class="h1">${r.emoji || ''} ${esc(r.name)}</h1>
           <div class="meta-row">
-            ${r.freestyle ? '<span class="chip ok">✍️ 自由料理</span>' : ''}
+            ${r.freestyle ? '<span class="chip ok">自由料理</span>' : ''}
             ${DIFF[r.difficulty] ? `<span class="chip violet">${DIFF[r.difficulty]}</span>` : ''}
-            ${r.servings ? `<span class="chip">🍽 ${esc(r.servings)}</span>` : ''}
-            ${r.cost ? `<span class="chip">💰 ${esc(r.cost)}</span>` : ''}
+            ${r.servings ? `<span class="chip">${esc(r.servings)}</span>` : ''}
+            ${r.cost ? `<span class="chip">${esc(r.cost)}</span>` : ''}
             ${(r.techniques || []).map((x) => `<span class="chip blue">${esc(x)}</span>`).join('')}
-            ${(r.seasons || []).map((x) => `<span class="chip">${SEASONS.find((s) => s.key === x)?.icon || ''} ${esc(x)}季</span>`).join('')}
+            ${(r.seasons || []).map((x) => `<span class="chip">${esc(x)}季</span>`).join('')}
           </div>
           <div class="mastery">
             <div class="mastery-top"><span>熟練度 ${starsHtml(st)}</span><span class="num">完成 ${n} 次</span></div>
