@@ -2000,5 +2000,50 @@
     ],
     "addedAt": "2026-09-29",
     "completions": []
+  },
+  {
+    "id": "kimchi-tteokbokki",
+    "name": "韓式泡菜炒年糕",
+    "emoji": "🌶️",
+    "category": "韓式",
+    "freestyle": true,
+    "techniques": [
+      "炒"
+    ],
+    "seasons": [],
+    "ingredients": [
+      {
+        "group": "",
+        "items": [
+          {
+            "name": "年糕"
+          },
+          {
+            "name": "韓式泡菜"
+          },
+          {
+            "name": "豬肉片"
+          },
+          {
+            "name": "鴻禧菇"
+          },
+          {
+            "name": "洋蔥"
+          },
+          {
+            "name": "蔥"
+          }
+        ]
+      }
+    ],
+    "steps": [],
+    "tips": [],
+    "addedAt": "2026-10-02",
+    "completions": [
+      {
+        "date": "2026-10-02",
+        "photo": "images/kimchi-tteokbokki-20261002.jpg"
+      }
+    ]
   }
 ]
