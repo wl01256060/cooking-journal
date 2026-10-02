@@ -201,6 +201,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .stars { color: #f5b301; letter-spacing: 1px; font-size: 14px; white-space: nowrap; }
 .stars .off { color: #dcdaea; }
 .rcard-meta { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.rcard-match { display: flex; flex-wrap: wrap; gap: 6px; }
 @media (max-width: 520px) {
   .rcard-body { padding: 10px 12px 12px; gap: 6px; }
   .rcard-title { font-size: 15px; }

@@ -278,6 +278,8 @@
   function cardHtml(r) {
     const n = r.completions.length;
     const img = thumb(r);
+    const words = ui.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const matched = words.length ? [...new Set(allIngredients(r).map((i) => i.name).filter((nm) => words.some((w) => nm.toLowerCase().includes(w))))] : [];
     return `
       <a class="rcard${n ? '' : ' locked'}" href="#/r/${encodeURIComponent(r.id)}">
         <div class="rcard-img">
@@ -289,6 +291,7 @@
         </div>
         <div class="rcard-body">
           <div class="rcard-title">${esc(r.name)}</div>
+          ${matched.length ? `<div class="rcard-match">${matched.slice(0, 3).map((m) => `<span class="chip blue">🥕 ${esc(m)}</span>`).join('')}</div>` : ''}
           <div class="rcard-meta">
             ${starsHtml(starsFor(n))}
             ${DIFF[r.difficulty] ? `<span class="chip">${DIFF[r.difficulty]}</span>` : ''}
