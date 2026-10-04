@@ -623,7 +623,12 @@
       "不想吃肉可以改用豆干。"
     ],
     "addedAt": "2026-09-29",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-04",
+        "photo": "images/kimchi-chicken-breast-20261004.jpg"
+      }
+    ]
   },
   {
     "id": "tomato-chicken-don",
