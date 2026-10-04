@@ -121,7 +121,13 @@
       "影片推薦搭配白酒。"
     ],
     "addedAt": "2026-09-29",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-04",
+        "photo": "images/one-pan-lemon-cream-pasta-20261004.jpg",
+        "variation": "義大利麵換成筆管麵，另外加了蝦仁"
+      }
+    ]
   },
   {
     "id": "oroshi-pork-cold-udon",
