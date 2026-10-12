@@ -2291,5 +2291,44 @@
         "variation": "五花肉換成蝦仁"
       }
     ]
+  },
+  {
+    "id": "tomato-scrambled-eggs",
+    "name": "蕃茄炒蛋",
+    "emoji": "🍅",
+    "category": "家常菜",
+    "freestyle": true,
+    "techniques": [
+      "炒"
+    ],
+    "seasons": [],
+    "ingredients": [
+      {
+        "group": "",
+        "items": [
+          {
+            "name": "番茄"
+          },
+          {
+            "name": "雞蛋"
+          },
+          {
+            "name": "鴻禧菇"
+          },
+          {
+            "name": "蔥"
+          }
+        ]
+      }
+    ],
+    "steps": [],
+    "tips": [],
+    "addedAt": "2026-10-12",
+    "completions": [
+      {
+        "date": "2026-10-12",
+        "photo": "images/tomato-scrambled-eggs-20261012.jpg"
+      }
+    ]
   }
 ]
