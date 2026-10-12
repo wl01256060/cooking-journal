@@ -2282,6 +2282,14 @@
       "大阪燒醬偏鹹，依口味斟酌用量。"
     ],
     "addedAt": "2026-10-09",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-12",
+        "photo": "images/okonomiyaki-20261012.jpg",
+        "note": "失敗，很難翻面，都碎掉了",
+        "improve": "分成小片煎，等鍋邊凝固、搖晃鍋子不再流動再用盤子翻面",
+        "variation": "五花肉換成蝦仁"
+      }
+    ]
   }
 ]
