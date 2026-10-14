@@ -60,7 +60,7 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* 私密模式等情況 */ } },
   };
   const PLAN_KEY = 'plan:v1';
-  const SHOP_KEY = 'shop:v1';
+  const NEED_KEY = 'need:v1'; // 購物清單：勾選 = 這次要買（家裡沒有）
   const getPlan = () => local.get(PLAN_KEY, []).filter((p) => recipes.some((r) => r.id === p.id));
   const inPlan = (id) => getPlan().some((p) => p.id === id);
   const togglePlan = (id) => {
@@ -464,7 +464,7 @@
       const r = recipes.find((x) => x.id === id);
       allIngredients(r).forEach((it) => {
         if (SKIP_ING.test(it.name)) return;
-        if (!map.has(it.name)) map.set(it.name, { name: it.name, uses: [], pantry: PANTRY.test(it.name) });
+        if (!map.has(it.name)) map.set(it.name, { name: it.name, uses: [], pantry: PANTRY.test(it.name) && !/奶油|豆腐/.test(it.name) });
         map.get(it.name).uses.push({ amount: it.amount || '適量', dish: r.name });
       });
     });
@@ -478,22 +478,26 @@
 
   function viewPlan() {
     const plan = getPlan();
-    const checked = local.get(SHOP_KEY, {});
+    const need = local.get(NEED_KEY, {});
     const items = shoppingList(plan);
     const doneSince = (r, since) => r.completions.some((c) => c.date >= since);
     const row = (x) => `
-      <label class="shop-item${checked[x.name] ? ' checked' : ''}">
-        <input type="checkbox" data-shop="${esc(x.name)}" ${checked[x.name] ? 'checked' : ''}>
+      <label class="shop-item${need[x.name] ? ' need' : ''}">
+        <input type="checkbox" data-need="${esc(x.name)}" ${need[x.name] ? 'checked' : ''}>
         <span class="shop-name">${esc(x.name)}${x.total ? ` <span class="shop-total">共 ${esc(x.total)}</span>` : ''}
           <small>${x.uses.map((u) => `${esc(u.amount)}（${esc(u.dish)}）`).join('＋')}</small>
         </span>
       </label>`;
-    const group = (title, list, hint) => list.length ? `
+    const group = (title, list, hint) => {
+      if (!list.length) return '';
+      const n = list.filter((x) => need[x.name]).length;
+      return `
       <div class="card shop-card">
-        <h2 class="h2">${title} <span class="chip">${(() => { const left = list.filter((x) => !checked[x.name]).length; return left ? `剩 ${left} / ${list.length} 項` : '全部完成 ✓'; })()}</span></h2>
-        ${hint ? `<p class="muted shop-hint">${hint}</p>` : ''}
-        ${[...list.filter((x) => !checked[x.name]), ...list.filter((x) => checked[x.name])].map(row).join('')}
-      </div>` : '';
+        <h2 class="h2">${title} <span class="chip${n ? ' violet' : ''}">${n ? `要買 ${n} 項` : '尚未勾選'}</span></h2>
+        <p class="muted shop-hint">${hint}</p>
+        ${[...list.filter((x) => need[x.name]), ...list.filter((x) => !need[x.name])].map(row).join('')}
+      </div>`;
+    };
     const buy = items.filter((x) => !x.pantry);
     const pantry = items.filter((x) => x.pantry);
 
@@ -514,41 +518,42 @@
           <h2 class="h2">購物清單</h2>
           <div class="shop-actions">
             <button class="btn ghost" id="shop-clear">清除勾選</button>
-            <button class="btn" id="shop-copy">複製清單</button>
+            <button class="btn" id="shop-copy">複製要買的</button>
           </div>
         </div>
         <div class="shop-grid">
-          ${group('要買的食材', buy)}
-          ${group('調味料', pantry, '先確認家裡有沒有，有的就打勾')}
+          ${group('食材', buy, '勾選家裡沒有、這次要買的')}
+          ${group('調味料', pantry, '家裡沒有的再勾選')}
         </div>
       </section>` : ''}`;
   }
 
   function bindPlan() {
-    app.querySelectorAll('[data-shop]').forEach((el) => {
+    app.querySelectorAll('[data-need]').forEach((el) => {
       el.onchange = () => {
-        const checked = local.get(SHOP_KEY, {});
-        if (el.checked) checked[el.dataset.shop] = true; else delete checked[el.dataset.shop];
-        local.set(SHOP_KEY, checked);
+        const need = local.get(NEED_KEY, {});
+        if (el.checked) need[el.dataset.need] = true; else delete need[el.dataset.need];
+        local.set(NEED_KEY, need);
         rerender();
       };
     });
     const clear = document.getElementById('shop-clear');
-    if (clear) clear.onclick = () => { local.set(SHOP_KEY, {}); rerender(); };
+    if (clear) clear.onclick = () => { local.set(NEED_KEY, {}); rerender(); };
     const copy = document.getElementById('shop-copy');
     if (copy) copy.onclick = async () => {
-      const checked = local.get(SHOP_KEY, {});
-      const items = shoppingList(getPlan()).filter((x) => !checked[x.name]);
+      const need = local.get(NEED_KEY, {});
+      const items = shoppingList(getPlan()).filter((x) => need[x.name]);
+      const flash = (t) => { copy.textContent = t; setTimeout(() => { copy.textContent = '複製要買的'; }, 1600); };
+      if (!items.length) return flash('請先勾選要買的');
       const line = (x) => `□ ${x.name} ${x.total || x.uses.map((u) => u.amount).join('＋')}`;
       const text = ['【購物清單】', ...items.filter((x) => !x.pantry).map(line),
-        ...(items.some((x) => x.pantry) ? ['', '【調味料（確認家裡有沒有）】', ...items.filter((x) => x.pantry).map(line)] : [])].join('\n');
+        ...(items.some((x) => x.pantry) ? ['', '【調味料】', ...items.filter((x) => x.pantry).map(line)] : [])].join('\n');
       let ok = false;
       try { await navigator.clipboard.writeText(text); ok = true; } catch {
         const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
         try { ok = document.execCommand('copy'); } catch { ok = false; } ta.remove();
       }
-      copy.textContent = ok ? '✓ 已複製' : '複製失敗';
-      setTimeout(() => { copy.textContent = '複製清單'; }, 1600);
+      flash(ok ? '✓ 已複製' : '複製失敗');
     };
   }
 
