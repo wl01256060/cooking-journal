@@ -79,7 +79,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 10px 30px -10px rgba(40, 30, 110, .3); padding: 6px; z-index: 30;
   }
-  .nav a { justify-content: center; padding: 9px 18px; font-size: 13px; flex: 1; }
+  .nav a { justify-content: center; padding: 9px 8px; font-size: 13px; flex: 1; }
   .nav a.active { background: var(--violet-soft); box-shadow: none; }
   body { padding-bottom: 96px; }
 }
@@ -218,6 +218,32 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .pager-btn:disabled { opacity: .4; cursor: default; }
 .pager-gap { color: var(--muted); padding: 0 2px; }
 .empty { text-align: center; padding: 48px 16px; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
+
+/* ---------- 加入計劃按鈕 ---------- */
+.rcard-plan {
+  position: absolute; right: 10px; top: 10px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line);
+  background: rgba(255,255,255,.92); color: var(--violet); font-size: 18px; font-weight: 700; line-height: 1;
+  display: grid; place-items: center; box-shadow: 0 2px 8px rgba(21,19,43,.12); transition: transform .15s;
+}
+.rcard-plan:hover { transform: scale(1.08); }
+.rcard-plan.on { background: var(--grad); color: #fff; border-color: transparent; }
+.plan-row { margin: 0 0 4px; }
+
+/* ---------- 計劃頁 / 購物清單 ---------- */
+.shop-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+.shop-head .h2 { margin: 0; }
+.shop-actions { display: flex; gap: 8px; }
+.shop-grid { display: grid; gap: 20px; grid-template-columns: 1.4fr 1fr; align-items: start; }
+@media (max-width: 860px) { .shop-grid { grid-template-columns: 1fr; } }
+.shop-hint { font-size: 13px; margin: -6px 0 6px; }
+.shop-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--line); cursor: pointer; }
+.shop-item:last-child { border-bottom: 0; }
+.shop-item input { accent-color: var(--violet); width: 20px; height: 20px; margin-top: 2px; flex: none; }
+.shop-name { flex: 1; font-weight: 700; }
+.shop-name small { display: block; font-weight: 400; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+.shop-total { font-weight: 600; color: var(--violet); font-size: 13px; margin-left: 4px; }
+.shop-item.checked .shop-name { color: var(--muted); text-decoration: line-through; }
+.shop-item.checked .shop-total { color: var(--muted); }
 
 /* ---------- Recipe detail ---------- */
 .back { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); font-weight: 600; margin-bottom: 14px; }

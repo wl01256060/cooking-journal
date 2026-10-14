@@ -37,6 +37,7 @@
   const today = () => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); };
   const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
   const daysBetween = (a, b) => Math.round((b - a) / DAY);
+  const isoDate = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   const fmt = (d) => `${d.getMonth() + 1}/${d.getDate()}`;
   const fmtFull = (s) => { const d = parseDate(s); return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`; };
   const seasonOf = (d) => SEASONS.find((s) => s.months.includes(d.getMonth() + 1));
@@ -53,6 +54,27 @@
   // 所以載入後寬度太小也要改用同為 16:9 的 mqdefault
   const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hq720.jpg`;
   const THUMB_FALLBACK = `onload="if(this.naturalWidth<200&&this.src.includes('/hq720.jpg'))this.src=this.src.replace('/hq720.jpg','/mqdefault.jpg')" onerror="this.onerror=null;this.src=this.src.replace('/hq720.jpg','/mqdefault.jpg')"`;
+  // 本週計劃與購物清單：存在這台裝置的瀏覽器（localStorage），讀寫失敗時不影響其他功能
+  const local = {
+    get(k, fb) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch { return fb; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* 私密模式等情況 */ } },
+  };
+  const PLAN_KEY = 'plan:v1';
+  const SHOP_KEY = 'shop:v1';
+  const getPlan = () => local.get(PLAN_KEY, []).filter((p) => recipes.some((r) => r.id === p.id));
+  const inPlan = (id) => getPlan().some((p) => p.id === id);
+  const togglePlan = (id) => {
+    const plan = getPlan();
+    local.set(PLAN_KEY, inPlan(id) ? plan.filter((p) => p.id !== id) : [...plan, { id, addedAt: isoDate(today()) }]);
+  };
+  const canPlan = (r) => !r.freestyle && r.ingredients.length > 0;
+  const planBtn = (r, full) => {
+    if (!canPlan(r)) return '';
+    const on = inPlan(r.id);
+    return full
+      ? `<button class="btn${on ? ' ghost' : ''} plan-btn" data-plan="${esc(r.id)}">${on ? '✓ 已在計劃中' : '＋ 加入計劃'}</button>`
+      : `<button class="rcard-plan${on ? ' on' : ''}" data-plan="${esc(r.id)}" aria-label="${on ? '從計劃移除' : '加入計劃'}" title="${on ? '從計劃移除' : '加入計劃'}">${on ? '✓' : '＋'}</button>`;
+  };
   const allIngredients = (r) => r.ingredients.flatMap((g) => g.items);
 
   /* ---------- stats ---------- */
@@ -318,6 +340,7 @@
             <span class="chip">${esc(r.category)}</span>
             ${r.freestyle ? '<span class="chip">自由料理</span>' : ''}
           </div>
+          ${planBtn(r)}
         </div>
         <div class="rcard-body">
           <div class="rcard-title">${esc(r.name)}</div>
@@ -361,6 +384,7 @@
             </div>
             <div class="mastery" title="完成 ${n} 次">熟練度 ${starsHtml(starsFor(n))}</div>
           </div>
+          ${canPlan(r) ? `<div class="plan-row">${planBtn(r, true)}</div>` : ''}
           ${last && last.improve ? `<div class="improve-note">📝 <b>上次想改進：</b>${esc(last.improve)}</div>` : ''}
           ${r.video ? `<div class="source">來源：<a href="${esc(r.video.url)}" target="_blank" rel="noopener">${esc(r.video.channel)} ↗</a></div>` : ''}
         </div>
@@ -425,6 +449,114 @@
       document.getElementById('video').innerHTML =
         `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(r.video.youtubeId)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="${esc(r.video.title)}"></iframe>`;
     };
+  }
+
+  // 購物清單：合併計劃中所有料理的食材；調味料另外列，水類不列
+  const SKIP_ING = /^(水|冰水|開水|冰塊水|熱水)$/;
+  const PANTRY = /(鹽|糖|醬油|胡椒|醋|酒|油|味醂|味噌|太白粉|地瓜粉|麵粉|咖哩粉|雞粉|鰹魚粉|高湯粉|魚露|蠔油|番茄醬|美乃滋|芝麻|辣椒粉|甜椒粉|芥末|出汁|風味露|月桂葉|起司粉|泡打粉)/;
+  const parseAmt = (a) => {
+    const m = String(a || '').replace(/^約\s*/, '').match(/^(\d+(?:\.\d+)?)\s*([^\d\s（(，、–~＋+]+)$/);
+    return m ? { n: parseFloat(m[1]), unit: m[2] } : null;
+  };
+  function shoppingList(plan) {
+    const map = new Map();
+    plan.forEach(({ id }) => {
+      const r = recipes.find((x) => x.id === id);
+      allIngredients(r).forEach((it) => {
+        if (SKIP_ING.test(it.name)) return;
+        if (!map.has(it.name)) map.set(it.name, { name: it.name, uses: [], pantry: PANTRY.test(it.name) });
+        map.get(it.name).uses.push({ amount: it.amount || '適量', dish: r.name });
+      });
+    });
+    return [...map.values()].map((x) => {
+      const parsed = x.uses.map((u) => parseAmt(u.amount));
+      const sameUnit = parsed.every((p) => p && p.unit === parsed[0].unit);
+      const total = x.uses.length > 1 && sameUnit ? `${+parsed.reduce((a, p) => a + p.n, 0).toFixed(2)} ${parsed[0].unit}` : '';
+      return { ...x, total };
+    });
+  }
+
+  function viewPlan() {
+    const plan = getPlan();
+    const checked = local.get(SHOP_KEY, {});
+    const items = shoppingList(plan);
+    const doneSince = (r, since) => r.completions.some((c) => c.date >= since);
+    const row = (x) => `
+      <label class="shop-item${checked[x.name] ? ' checked' : ''}">
+        <input type="checkbox" data-shop="${esc(x.name)}" ${checked[x.name] ? 'checked' : ''}>
+        <span class="shop-name">${esc(x.name)}${x.total ? ` <span class="shop-total">共 ${esc(x.total)}</span>` : ''}
+          <small>${x.uses.map((u) => `${esc(u.amount)}（${esc(u.dish)}）`).join('＋')}</small>
+        </span>
+      </label>`;
+    const group = (title, list, hint) => list.length ? `
+      <div class="card shop-card">
+        <h2 class="h2">${title} <span class="chip">${(() => { const left = list.filter((x) => !checked[x.name]).length; return left ? `剩 ${left} / ${list.length} 項` : '全部完成 ✓'; })()}</span></h2>
+        ${hint ? `<p class="muted shop-hint">${hint}</p>` : ''}
+        ${[...list.filter((x) => !checked[x.name]), ...list.filter((x) => checked[x.name])].map(row).join('')}
+      </div>` : '';
+    const buy = items.filter((x) => !x.pantry);
+    const pantry = items.filter((x) => x.pantry);
+
+    return `
+      <div class="eyebrow">計劃</div>
+      <h1 class="h1">本週計劃</h1>
+      <section class="section">
+        <h2 class="h2">要做的料理 <span class="chip">${plan.length} 道</span></h2>
+        ${plan.length ? `<div class="grid">${plan.map((p) => {
+          const r = recipes.find((x) => x.id === p.id);
+          return cardHtml(r).replace('<div class="rcard-tags">', `<div class="rcard-tags">${doneSince(r, p.addedAt) ? '<span class="chip ok">已完成</span>' : ''}`);
+        }).join('')}</div>`
+        : '<div class="empty">還沒有加入任何料理<br>到食譜頁按卡片右上角的「＋」加入</div>'}
+      </section>
+      ${plan.length ? `
+      <section class="section">
+        <div class="shop-head">
+          <h2 class="h2">購物清單</h2>
+          <div class="shop-actions">
+            <button class="btn ghost" id="shop-clear">清除勾選</button>
+            <button class="btn" id="shop-copy">複製清單</button>
+          </div>
+        </div>
+        <div class="shop-grid">
+          ${group('要買的食材', buy)}
+          ${group('調味料', pantry, '先確認家裡有沒有，有的就打勾')}
+        </div>
+      </section>` : ''}`;
+  }
+
+  function bindPlan() {
+    app.querySelectorAll('[data-shop]').forEach((el) => {
+      el.onchange = () => {
+        const checked = local.get(SHOP_KEY, {});
+        if (el.checked) checked[el.dataset.shop] = true; else delete checked[el.dataset.shop];
+        local.set(SHOP_KEY, checked);
+        rerender();
+      };
+    });
+    const clear = document.getElementById('shop-clear');
+    if (clear) clear.onclick = () => { local.set(SHOP_KEY, {}); rerender(); };
+    const copy = document.getElementById('shop-copy');
+    if (copy) copy.onclick = async () => {
+      const checked = local.get(SHOP_KEY, {});
+      const items = shoppingList(getPlan()).filter((x) => !checked[x.name]);
+      const line = (x) => `□ ${x.name} ${x.total || x.uses.map((u) => u.amount).join('＋')}`;
+      const text = ['【購物清單】', ...items.filter((x) => !x.pantry).map(line),
+        ...(items.some((x) => x.pantry) ? ['', '【調味料（確認家裡有沒有）】', ...items.filter((x) => x.pantry).map(line)] : [])].join('\n');
+      let ok = false;
+      try { await navigator.clipboard.writeText(text); ok = true; } catch {
+        const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+        try { ok = document.execCommand('copy'); } catch { ok = false; } ta.remove();
+      }
+      copy.textContent = ok ? '✓ 已複製' : '複製失敗';
+      setTimeout(() => { copy.textContent = '複製清單'; }, 1600);
+    };
+  }
+
+  // 重新繪製目前頁面，保留捲動位置
+  function rerender() {
+    const y = window.scrollY;
+    if (document.getElementById('list')) renderList(); else render();
+    window.scrollTo(0, y);
   }
 
   function viewAchievements() {
@@ -571,6 +703,9 @@
       bindRecipe(decodeURIComponent(arg || ''));
       const r = recipes.find((x) => x.id === decodeURIComponent(arg || ''));
       document.title = r ? `${r.name}｜料理紀錄` : '料理紀錄';
+    } else if (route === 'plan') {
+      app.innerHTML = viewPlan(); document.title = '計劃｜料理紀錄';
+      bindPlan();
     } else if (route === 'achievements') {
       app.innerHTML = viewAchievements(); document.title = '成就｜料理紀錄';
     } else if (route === 'collection') {
@@ -603,6 +738,15 @@
     document.getElementById('cat').onchange = (e) => { ui.category = e.target.value; ui.page = 1; renderList(); };
     document.getElementById('diff').onchange = (e) => { ui.difficulty = e.target.value; ui.page = 1; renderList(); };
   }
+
+  app.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-plan]');
+    if (!b) return;
+    e.preventDefault();
+    e.stopPropagation();
+    togglePlan(b.dataset.plan);
+    rerender();
+  });
 
   let lastRoute = '';
   window.addEventListener('hashchange', () => {
