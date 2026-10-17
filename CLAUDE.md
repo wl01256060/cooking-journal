@@ -1,6 +1,7 @@
 # 料理人之路 — 工作流程
 
 個人料理學習紀錄網站（純靜態，GitHub Pages）。使用者用繁體中文溝通。
+網站：https://wl01256060.github.io/cooking-journal/（repo `wl01256060/cooking-journal` 必須是 **public**；GitHub 免費方案的私人 repo 不能用 Pages，改成 private 網站會變 404。2026-10 曾發生過，已改回 public 並重開 Pages）
 所有成就都在 `js/app.js` 的 `compute()` 由資料即時計算，不存檔。
 
 ## 資料
