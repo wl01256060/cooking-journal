@@ -35,32 +35,28 @@
       "type": "count",
       "at": 26,
       "icon": "🥣",
-      "title": "買電動打蛋機",
-      "major": true
+      "title": "買電動打蛋機"
     },
     {
       "id": "c52",
       "type": "count",
       "at": 52,
       "icon": "🍽️",
-      "title": "吃一次大餐",
-      "major": true
+      "title": "吃一次大餐"
     },
     {
       "id": "c78",
       "type": "count",
       "at": 78,
       "icon": "🍽️",
-      "title": "吃一次大餐",
-      "major": true
+      "title": "吃一次大餐"
     },
     {
       "id": "c130",
       "type": "count",
       "at": 130,
       "icon": "🧊",
-      "title": "買新冰箱",
-      "major": true
+      "title": "買新冰箱"
     }
   ],
   "claims": {}
