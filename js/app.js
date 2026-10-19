@@ -606,7 +606,7 @@
           ${s.rewards.filter((r) => r.type !== 'count').map(rewardRow).join('')}
           ${s.countRewards.map(rewardRow).join('')}
         </div>
-        <h3 class="h2" style="font-size:16px;margin-top:22px">🔄 每年可以拿一次</h3>
+        ${recurring.length ? `<h3 class="h2" style="font-size:16px;margin-top:22px">🔄 每年可以拿一次</h3>` : ''}
         <div class="rewards">
           ${recurring.map((r) => {
             const prog = r.type === 'attendance'
