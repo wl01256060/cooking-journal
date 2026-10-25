@@ -1233,7 +1233,12 @@
       "鍋底的燉煮湯汁淋在白飯上超下飯。"
     ],
     "addedAt": "2026-09-29",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-25",
+        "photo": "images/salmon-miso-chanchan-yaki-20261025.jpg"
+      }
+    ]
   },
   {
     "id": "salmon-bone-miso-soup",
@@ -2016,7 +2021,12 @@
       "用家裡瓦斯爐火力比較大，湯汁會收得比較快，要注意火候。"
     ],
     "addedAt": "2026-09-29",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-25",
+        "photo": "images/easy-oyakodon-20261025.jpg"
+      }
+    ]
   },
   {
     "id": "kimchi-tteokbokki",
@@ -2656,6 +2666,11 @@
       "削下來的蘿蔔皮可以做成泡菜，不浪費。"
     ],
     "addedAt": "2026-10-24",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-10-25",
+        "photo": "images/daikon-pork-stew-20261025.jpg"
+      }
+    ]
   }
 ]
