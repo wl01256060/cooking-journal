@@ -396,7 +396,7 @@
         <h2 class="h2">完成紀錄</h2>
         ${n ? `<div class="history">${[...r.completions].reverse().map((c) => `
           <div class="hist">
-            ${c.photo ? `<img src="${esc(c.photo)}" alt="${esc(r.name)} ${esc(c.date)}" loading="lazy">` : ''}
+            ${c.photo ? `<button class="hist-photo" data-zoom="${esc(c.photo)}" aria-label="放大照片：${esc(r.name)} ${esc(c.date)}"><img src="${esc(c.photo)}" alt="${esc(r.name)} ${esc(c.date)}" loading="lazy"></button>` : ''}
             <div class="hist-body">
               <div class="date"><span>${fmtFull(c.date)}</span>${c.rating ? `<span class="stars">${'★'.repeat(c.rating)}</span>` : ''}</div>
               ${c.note ? `<p>${esc(c.note)}</p>` : ''}
@@ -744,7 +744,26 @@
     document.getElementById('diff').onchange = (e) => { ui.difficulty = e.target.value; ui.page = 1; renderList(); };
   }
 
+  // 完成紀錄照片：點擊放大，點任何地方或按 Esc 關閉
+  function openLightbox(src, alt) {
+    const box = document.createElement('div');
+    box.className = 'lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', alt);
+    box.innerHTML = `<img src="${esc(src)}" alt="${esc(alt)}"><button class="lightbox-close" aria-label="關閉">✕</button>`;
+    const close = () => { box.remove(); document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+    const onKey = (e) => { if (e.key === 'Escape') close(); };
+    box.onclick = close;
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    document.body.appendChild(box);
+    box.querySelector('.lightbox-close').focus();
+  }
+
   app.addEventListener('click', (e) => {
+    const z = e.target.closest('[data-zoom]');
+    if (z) { openLightbox(z.dataset.zoom, z.querySelector('img').alt); return; }
     const b = e.target.closest('[data-plan]');
     if (!b) return;
     e.preventDefault();
