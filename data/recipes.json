@@ -2779,5 +2779,79 @@
     ],
     "addedAt": "2026-10-28",
     "completions": []
+  },
+  {
+    "id": "sweet-pickled-celery",
+    "name": "甜醃芹菜",
+    "emoji": "🥬",
+    "category": "小菜",
+    "difficulty": 1,
+    "servings": "1 大盒（常備菜）",
+    "techniques": [
+      "煮"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=7O1XXNhVTxE&t=100s",
+      "youtubeId": "7O1XXNhVTxE",
+      "title": "實測超熱門炸雞食譜！！（Gordon Ramsay 炸雞附的甜醃芹菜）｜好味小姐腦波弱",
+      "channel": "好味小姐腦波弱"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "西洋芹",
+            "amount": "1 把",
+            "note": "洗淨斜切段"
+          }
+        ]
+      },
+      {
+        "group": "醃汁",
+        "items": [
+          {
+            "name": "水",
+            "amount": "適量"
+          },
+          {
+            "name": "白酒醋",
+            "amount": "適量"
+          },
+          {
+            "name": "糖",
+            "amount": "適量",
+            "note": "影片放很多，偏甜"
+          },
+          {
+            "name": "鹽",
+            "amount": "少許"
+          },
+          {
+            "name": "花椒",
+            "amount": "少許"
+          },
+          {
+            "name": "丁香",
+            "amount": "少許"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "西洋芹（1 把）洗淨，斜切成段，放進可密封的保鮮盒。",
+      "小鍋倒入一點水，加入糖、花椒、丁香和少許鹽。",
+      "倒入白酒醋攪拌均勻，開火煮滾讓糖融化後關火。",
+      "趁熱把醃汁倒進芹菜裡，蓋上蓋子。",
+      "稍微放涼後冷藏，醃一段時間入味再吃。"
+    ],
+    "tips": [
+      "這是 Gordon Ramsay「Buttermilk Fried Chicken with Sweet Pickled Celery」裡搭配炸雞的醃菜，酸甜脆口，可以解膩。",
+      "醋會蓋掉芹菜的草味，不愛芹菜的人也能吃；吃到後面會有丁香的香氣。",
+      "影片沒有給份量。一般甜醋醃漬的參考比例是水：醋 約 1：1，糖約醋的一半，鹽一小撮，可以依口味調整甜度。"
+    ],
+    "addedAt": "2026-10-29",
+    "completions": []
   }
 ]
