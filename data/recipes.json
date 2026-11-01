@@ -3126,5 +3126,138 @@
     ],
     "addedAt": "2026-11-01",
     "completions": []
+  },
+  {
+    "id": "sticky-honey-fried-chicken",
+    "name": "蜜汁炸雞塊",
+    "emoji": "🍯",
+    "category": "家常菜",
+    "difficulty": 1,
+    "servings": "2 人份",
+    "techniques": [
+      "炸"
+    ],
+    "seasons": [],
+    "video": {
+      "url": "https://www.youtube.com/shorts/VqvKXKajjvw",
+      "youtubeId": "VqvKXKajjvw",
+      "title": "蜜汁炸雞塊 Sticky Sweet Fried Chicken",
+      "channel": "MASA's Cooking ABC"
+    },
+    "ingredients": [
+      {
+        "group": "食材",
+        "items": [
+          {
+            "name": "雞胸肉",
+            "amount": "適量",
+            "note": "切一口大小"
+          }
+        ]
+      },
+      {
+        "group": "醃料",
+        "items": [
+          {
+            "name": "醬油",
+            "amount": "適量"
+          },
+          {
+            "name": "麻油",
+            "amount": "適量"
+          },
+          {
+            "name": "砂糖",
+            "amount": "適量"
+          },
+          {
+            "name": "胡椒",
+            "amount": "適量"
+          },
+          {
+            "name": "蒜頭",
+            "amount": "適量",
+            "note": "磨成泥"
+          }
+        ]
+      },
+      {
+        "group": "裹粉",
+        "items": [
+          {
+            "name": "太白粉",
+            "amount": "適量"
+          },
+          {
+            "name": "麵粉",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "蜜汁醬",
+        "items": [
+          {
+            "name": "番茄醬",
+            "amount": "適量"
+          },
+          {
+            "name": "醬油",
+            "amount": "適量"
+          },
+          {
+            "name": "砂糖",
+            "amount": "適量"
+          },
+          {
+            "name": "醋",
+            "amount": "適量"
+          },
+          {
+            "name": "蜂蜜",
+            "amount": "適量"
+          }
+        ]
+      },
+      {
+        "group": "其他",
+        "items": [
+          {
+            "name": "炸油",
+            "amount": "適量",
+            "note": "淺油半煎炸即可"
+          },
+          {
+            "name": "蔥花",
+            "amount": "適量"
+          },
+          {
+            "name": "白芝麻",
+            "amount": "適量"
+          },
+          {
+            "name": "生菜",
+            "amount": "適量",
+            "note": "包著吃，可省略"
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "雞胸肉切成一口大小的塊狀。",
+      "加入醬油、麻油、砂糖、胡椒和磨成泥的蒜頭，抓勻醃一下。",
+      "加入太白粉和麵粉，用手抓勻，讓每塊雞肉都均勻裹上粉。",
+      "平底鍋倒入約 1 cm 深的油加熱，一塊塊放入雞肉，中火炸到兩面金黃、熟透後撈起瀝油。",
+      "把鍋裡的油倒掉，放入番茄醬、醬油、砂糖、醋和蜂蜜，攪勻後煮到冒大泡、變濃稠。",
+      "放回炸好的雞塊，快速翻炒讓每塊都裹上醬汁。",
+      "盛盤，撒上蔥花和白芝麻；也可以用生菜包著吃。"
+    ],
+    "tips": [
+      "太白粉加麵粉一起裹，外皮比較酥脆、不容易掉粉。",
+      "用平底鍋淺油半煎炸就好，不用一大鍋油。",
+      "醬汁要煮到濃稠冒大泡再放雞塊，才會亮亮地黏在雞塊上；放入後快速翻勻就起鍋，才不會讓外皮變軟。"
+    ],
+    "addedAt": "2026-11-01",
+    "completions": []
   }
 ]
