@@ -1850,7 +1850,12 @@
       "喜歡重口味就多加魚露、是拉差醬和糖；想更道地可以加香茅、檸檬葉。"
     ],
     "addedAt": "2026-09-29",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-11-22",
+        "photo": "images/thai-seafood-salad-20261122.jpg"
+      }
+    ]
   },
   {
     "id": "easy-oyakodon",
@@ -3194,7 +3199,12 @@
       "醬汁要煮到濃稠冒大泡再放雞塊，才會亮亮地黏在雞塊上；放入後快速翻勻就起鍋，才不會讓外皮變軟。"
     ],
     "addedAt": "2026-11-01",
-    "completions": []
+    "completions": [
+      {
+        "date": "2026-11-22",
+        "photo": "images/sticky-honey-fried-chicken-20261122.jpg"
+      }
+    ]
   },
   {
     "id": "teriyaki-oyakodon",
