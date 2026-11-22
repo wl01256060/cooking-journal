@@ -681,8 +681,12 @@
               <span class="muted">完成 <b>${byYear[y].length}</b> 次 · 新料理 <b>${newByYear[y]}</b> 道</span>
             </div>
             <div class="mosaic">
-              ${[...byYear[y]].reverse().map((c) => `<a href="#/r/${encodeURIComponent(c.recipe.id)}" title="${esc(c.recipe.name)}">
-                ${c.photo ? `<img src="${esc(c.photo)}" alt="" loading="lazy">` : `<span class="emoji">${c.recipe.emoji || '🍽️'}</span>`}
+              ${[...byYear[y]].reverse().map((c) => c.photo
+                ? `<button data-zoom="${esc(c.photo)}" title="${esc(c.recipe.name)}" aria-label="放大照片：${esc(c.recipe.name)} ${fmt(c.d)}">
+                <img src="${esc(c.photo)}" alt="${esc(c.recipe.name)} ${fmt(c.d)}" loading="lazy">
+                <span class="cap">${esc(c.recipe.name)} · ${fmt(c.d)}</span></button>`
+                : `<a href="#/r/${encodeURIComponent(c.recipe.id)}" title="${esc(c.recipe.name)}">
+                <span class="emoji">${c.recipe.emoji || '🍽️'}</span>
                 <span class="cap">${esc(c.recipe.name)} · ${fmt(c.d)}</span></a>`).join('')}
             </div>
           </div>`).join('') : '<div class="empty">第一道料理完成後，這裡會開始累積你的年度回顧 📸</div>'}
@@ -744,7 +748,7 @@
     document.getElementById('diff').onchange = (e) => { ui.difficulty = e.target.value; ui.page = 1; renderList(); };
   }
 
-  // 完成紀錄照片：點擊放大，點任何地方或按 Esc 關閉
+  // 完成紀錄照片：點擊放大，點任何地方、按 Esc 或按上一頁關閉
   function openLightbox(src, alt) {
     const box = document.createElement('div');
     box.className = 'lightbox';
@@ -752,9 +756,16 @@
     box.setAttribute('aria-modal', 'true');
     box.setAttribute('aria-label', alt);
     box.innerHTML = `<img src="${esc(src)}" alt="${esc(alt)}"><button class="lightbox-close" aria-label="關閉">✕</button>`;
-    const close = () => { box.remove(); document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; };
+    // 開啟時推一筆 history，讓手機的上一頁只關掉照片、不離開頁面
+    const remove = () => {
+      box.remove(); document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey); window.removeEventListener('popstate', remove);
+    };
+    const close = () => { if (history.state && history.state.lightbox) history.back(); else remove(); };
     const onKey = (e) => { if (e.key === 'Escape') close(); };
     box.onclick = close;
+    history.pushState({ lightbox: true }, '');
+    window.addEventListener('popstate', remove);
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
     document.body.appendChild(box);
